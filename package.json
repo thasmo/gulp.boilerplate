@@ -1,6 +1,6 @@
 {
   "name": "gulp.boilerplate",
-  "version": "3.0.4",
+  "version": "0.1.0",
   "description": "Personal boilerplate for gulp.js projects.",
   "repository": {
     "type": "git",
