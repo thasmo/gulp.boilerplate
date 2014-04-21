@@ -1,0 +1,31 @@
+{
+  "name": "gulp.boilerplate",
+  "version": "3.0.4",
+  "description": "Personal boilerplate for gulp.js projects.",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/thasmo/gulp.boilerplate"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.1",
+    "gulp-svgmin": "^0.4.5",
+    "gulp-svg-sprites": "^0.1.0",
+    "gulp-load-plugins": "^0.5.0",
+    "gulp-include": "^0.2.2",
+    "gulp-sass": "^0.7.1",
+    "gulp-bower": "0.0.4",
+    "gulp-imagemin": "^0.2.0",
+    "gulp-changed": "^0.3.0",
+    "gulp-clean": "^0.2.4",
+    "gulp-bump": "^0.1.7",
+    "gulp-livereload": "^1.3.1",
+    "gulp-util": "^2.2.14",
+    "gulp-uglify": "^0.2.1",
+    "gulp-csso": "^0.2.8",
+    "gulp-recess": "^0.3.0",
+    "gulp-plumber": "^0.6.1",
+    "gulp-jshint": "^1.5.3",
+    "jshint-stylish": "^0.1.5",
+    "event-stream": "^3.1.2"
+  }
+}

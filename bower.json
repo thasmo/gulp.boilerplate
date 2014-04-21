@@ -1,0 +1,23 @@
+{
+  "name": "gulp.boilerplate",
+  "version": "3.0.4",
+  "authors": [
+    "Thomas Deinhamer <thasmo@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.11.0",
+    "bourbon": "~3.2.0",
+    "neat": "~1.5.1",
+    "normalize.css": "~3.0.1",
+    "modernizr": "~2.7.2"
+  }
+}
