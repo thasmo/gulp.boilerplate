@@ -26,7 +26,11 @@ var config = {
 		imagemin: {
 			optimizationLevel: 7,
 			progressive: true,
-			interlaced: true
+			interlaced: true,
+			svgoPlugins: [
+				{removeDoctype: false},
+				{removeXMLProcInst: false}
+			]
 		},
 		svgsprites: {
 			className: '.icon-%f',
