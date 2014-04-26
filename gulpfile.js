@@ -13,6 +13,9 @@ var stream = require('event-stream');
 
 var config = {
 	plugin: {
+		plumber: {
+			errorHandler: error
+		},
 		recess: {
 			strictPropertyOrder: false,
 			prefixWhitespace: false
@@ -42,11 +45,20 @@ var config = {
 	}
 };
 
+// FUNCTIONS /////////////////////////////////////
+
+// Error handler
+function error(error) {
+	console.log(error.toString());
+	this.emit('end');
+}
+
 // TASKS /////////////////////////////////////////
 
 // Styles
 gulp.task('styles', function() {
 	return gulp.src('application/static/style/*.scss')
+		.pipe($.plumber(config.plugin.plumber))
 		.pipe($.include())
 		.pipe($.sass())
 		.pipe($.util.env.production ? $.csso() : $.util.noop())
@@ -56,11 +68,13 @@ gulp.task('styles', function() {
 // Scripts
 gulp.task('scripts', function() {
 	var common = gulp.src('application/static/script/*.js')
+		.pipe($.plumber(config.plugin.plumber))
 		.pipe($.include())
 		.pipe($.util.env.production ? $.uglify() : $.util.noop())
 		.pipe(gulp.dest('public/static/script/'));
 
 	var vendor = gulp.src('application/static/script/vendor/**/*.js')
+		.pipe($.plumber(config.plugin.plumber))
 		.pipe($.include())
 		.pipe($.util.env.production ? $.uglify() : $.util.noop())
 		.pipe(gulp.dest('public/static/script/vendor/'));
@@ -71,12 +85,14 @@ gulp.task('scripts', function() {
 // Images
 gulp.task('images', function() {
 	var common = gulp.src('application/static/image/common/**/*.{png,jpg,gif,svg}')
+		.pipe($.plumber(config.plugin.plumber))
 		.pipe($.changed('public/static/image/common/'))
 		.pipe($.util.env.production ? $.imagemin(config.plugin.imagemin) : $.util.noop())
 		.pipe(gulp.dest('public/static/image/common/'));
 
 	var sprites = gulp.src('application/static/image/sprite/**/*.svg')
-		.pipe($.imagemin(config.plugin.imagemin))
+		.pipe($.plumber(config.plugin.plumber))
+		.pipe($.util.env.production ? $.imagemin(config.plugin.imagemin) : $.util.noop())
 		.pipe($.svgSprites.svg(config.plugin.svgsprites))
 		.pipe(gulp.dest('public/static/image/sprite/'))
 		.pipe($.svgSprites.png());
@@ -87,6 +103,7 @@ gulp.task('images', function() {
 // Fonts
 gulp.task('fonts', function () {
 	return gulp.src('application/static/font/**/*.{eot,ttf,woff,svg}')
+		.pipe($.plumber(config.plugin.plumber))
 		.pipe(gulp.dest('public/static/font/'));
 });
 
