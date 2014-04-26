@@ -115,26 +115,16 @@ gulp.task('watch', function() {
 	});
 
 	// Watch styles
-	gulp.watch('application/static/style/**/*', ['styles']).on('change', function(file) {
-		return gulp.src(file.path)
-			.pipe($.plumber())
-			.pipe($.sass())
-			.pipe($.recess(config.plugin.recess));
-	});
+	gulp.watch('application/static/style/**', ['styles']);
 
 	// Watch scripts
-	gulp.watch('application/static/script/**/*', ['scripts']).on('change', function(file) {
-		return gulp.src(file.path)
-			.pipe($.plumber())
-			.pipe($.jshint(config.plugin.jshint))
-			.pipe($.jshint.reporter('jshint-stylish'))
-	});
+	gulp.watch('application/static/script/**', ['scripts']);
 
 	// Watch images
-	gulp.watch('application/static/image/**/*', ['images']);
+	gulp.watch('application/static/image/**', ['images']);
 
 	// Watch fonts
-	gulp.watch('application/static/font/**/*', ['fonts']);
+	gulp.watch('application/static/font/**', ['fonts']);
 });
 
 // Release

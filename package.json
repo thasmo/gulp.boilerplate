@@ -21,10 +21,7 @@
     "gulp-util": "^2.2.14",
     "gulp-uglify": "^0.2.1",
     "gulp-csso": "^0.2.8",
-    "gulp-recess": "^0.3.0",
     "gulp-plumber": "^0.6.1",
-    "gulp-jshint": "^1.5.3",
-    "jshint-stylish": "^0.1.5",
     "event-stream": "^3.1.2"
   }
 }
