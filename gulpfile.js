@@ -70,13 +70,13 @@ gulp.task('scripts', function() {
 
 // Images
 gulp.task('images', function() {
-	var common = gulp.src('application/static/image/common/**/*.{png,jpg,gif}')
+	var common = gulp.src('application/static/image/common/**/*.{png,jpg,gif,svg}')
 		.pipe($.changed('public/static/image/common/'))
 		.pipe($.util.env.production ? $.imagemin(config.plugin.imagemin) : $.util.noop())
 		.pipe(gulp.dest('public/static/image/common/'));
 
 	var sprites = gulp.src('application/static/image/sprite/**/*.svg')
-		.pipe($.svgmin())
+		.pipe($.imagemin(config.plugin.imagemin))
 		.pipe($.svgSprites.svg(config.plugin.svgsprites))
 		.pipe(gulp.dest('public/static/image/sprite/'))
 		.pipe($.svgSprites.png());
