@@ -33,7 +33,8 @@ var config = {
 			svg: {
 				sprite: 'sprite.svg',
 				defs: 'sprite.svg'
-			}
+			},
+			padding: 1
 		},
 		bump: {
 			type: ($.util.env.major && 'major') || ($.util.env.minor && 'minor') || 'patch'
