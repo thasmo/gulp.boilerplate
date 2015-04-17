@@ -1,0 +1,14 @@
+{
+	"name": "gulp.js Boilerplate",
+	"start_url": "index.html",
+	"display": "standalone",
+	"orientation": "portrait",
+	"icons": [
+		{
+			"src": "icon.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"density": "4.0"
+		}
+	]
+}
