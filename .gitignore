@@ -1,12 +1,8 @@
-# OS
-Thumbs.db
-.DS_Store
-desktop.ini
+/public/
+!/public/.gitkeep
 
-# Development
-/.idea/
-/node_modules/
-/bower_components/
+node_modules/
+bower_components/
 
-# Project
-/public/static/
+tmp/
+*.log
