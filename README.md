@@ -7,6 +7,7 @@ Personal Gulp boilerplate for basic frontend web projects.
 * Jade Support
 * Image Optimization
 * SVG-Sprite Generation
+* WebP Generation
 * Icon-Font Generation
 * Browser-Sync Integration
 * Auto-Prefixer Integration
