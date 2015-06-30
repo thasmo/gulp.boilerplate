@@ -6,7 +6,7 @@
     "url": "http://github.com/thasmo/gulp.boilerplate"
   },
   "devDependencies": {
-    "gulp": "~3.8",
+    "gulp": "~3.9",
     "gulp-util": "~3.0",
     "gulp-plumber": "~1.0",
     "gulp-svg-sprite": "~1.1",
