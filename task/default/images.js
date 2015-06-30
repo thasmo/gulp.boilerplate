@@ -19,6 +19,8 @@ gulp.task('images:common', function() {
 		.pipe($.changed(path.public.image))
 		.pipe($.util.env.production ? $.imagemin(config.plugin.imagemin) : $.util.noop())
 		.pipe(gulp.dest(path.public.image))
+		.pipe($.webp())
+		.pipe(gulp.dest(path.public.image))
 		.pipe($.duration(name))
 		.pipe(helper.success(name));
 });
