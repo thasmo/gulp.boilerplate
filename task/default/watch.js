@@ -12,7 +12,7 @@ gulp.task('watch', ['watch:tasks', 'watch:server']);
 gulp.task('watch:tasks', function() {
 
 	// Setup
-	gulp.watch(path.setup.bower, ['install:bower']);
+	gulp.watch(path.setup.bower, ['setup:bower']);
 
 	// Common
 	gulp.watch(path.source.main + '*.*', ['common']);
