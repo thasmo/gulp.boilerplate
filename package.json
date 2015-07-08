@@ -1,6 +1,7 @@
 {
   "name": "gulp.boilerplate",
   "description": "Personal Gulp boilerplate for basic frontend web projects.",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "http://github.com/thasmo/gulp.boilerplate"
