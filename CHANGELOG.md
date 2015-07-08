@@ -4,6 +4,11 @@
 
 ### Added
 - Support for webp images.
+- Integrate metaquery.
+
+### Fixed
+- Include vendor.js file.
+- Use correct bower task name.
 
 ## 0.1.0 - 2015-04-17
 
