@@ -12,6 +12,7 @@ Personal Gulp boilerplate for basic frontend web projects.
 * Browser-Sync Integration
 * Auto-Prefixer Integration
 * Metaquery Integration
+* Picturefill Integration
 * Source-Map Integration
 * Resource Minification
 * Notification Support

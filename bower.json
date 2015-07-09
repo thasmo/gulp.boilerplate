@@ -8,6 +8,7 @@
     "modernizr": "~2.8",
     "html5shiv": "~3.7",
     "velocity": "~1.2",
-    "metaquery": "~1.2"
+    "metaquery": "~1.2",
+    "picturefill": "~2.3"
   }
 }

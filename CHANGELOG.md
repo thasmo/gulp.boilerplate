@@ -5,6 +5,7 @@
 ### Added
 - Support for webp images.
 - Integrate metaquery.
+- Integrate picturefill.
 
 ### Changed
 - Swap csso for cssnano.
