@@ -19,7 +19,7 @@
     "gulp-webp": "~2.3",
     "gulp-changed": "~1.2",
     "gulp-uglify": "~1.2",
-    "gulp-csso": "~1.0",
+    "gulp-cssnano": "~1.1",
     "gulp-filter": "~2.0",
     "gulp-rename": "~1.2",
     "gulp-notify": "~2.2",

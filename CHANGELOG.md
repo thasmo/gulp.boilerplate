@@ -6,6 +6,9 @@
 - Support for webp images.
 - Integrate metaquery.
 
+### Changed
+- Swap csso for cssnano.
+
 ### Fixed
 - Include vendor.js file.
 - Use correct bower task name.
