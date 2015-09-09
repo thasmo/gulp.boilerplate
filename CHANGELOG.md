@@ -6,6 +6,7 @@
 - Support for webp images.
 - Integrate metaquery.
 - Integrate picturefill.
+- Integrate eslint via XO.
 
 ### Changed
 - Swap csso for cssnano.

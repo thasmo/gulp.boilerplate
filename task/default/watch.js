@@ -24,8 +24,9 @@ gulp.task('watch:tasks', function() {
 	gulp.watch(path.source.style + '**', ['styles:common']);
 
 	// Script
-	gulp.watch(path.source.script + '*.js', ['scripts:common']);
+	gulp.watch(path.source.script + '*.{js,coffee}', ['scripts:common']);
 	gulp.watch(path.source.script + 'vendor/**/*.js', ['scripts:vendor']);
+	gulp.watch([path.source.script + '**/*.js', '!' + path.source.script + 'vendor/**'], ['scripts:lint']);
 
 	// Images
 	gulp.watch(path.source.image + '*.{png,jpg,gif,svg}', ['images:common']);

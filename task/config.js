@@ -30,6 +30,10 @@ module.exports = {
 			]
 		},
 
+		xo: {
+			quiet: true
+		},
+
 		svgsprite: {
 			svg: {
 				dimensionAttributes: false
