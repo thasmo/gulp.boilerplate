@@ -9,6 +9,7 @@
 
 ### Changed
 - Swap csso for cssnano.
+- Don't log notify success messages.
 
 ### Fixed
 - Include vendor.js file.

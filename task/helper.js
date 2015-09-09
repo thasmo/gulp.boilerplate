@@ -9,6 +9,8 @@ module.exports = {
 	}),
 
 	success: function (task, message) {
+		$.notify.logLevel(1);
+
 		return $.notify({
 			title: task,
 			message: message || 'Task finished.',
