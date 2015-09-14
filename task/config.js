@@ -92,7 +92,8 @@ module.exports = {
 			server: {
 				baseDir: path.public.main
 			},
-			reloadDebounce: 250
+			reloadDebounce: 250,
+			online: true
 		}
 	}
 };
