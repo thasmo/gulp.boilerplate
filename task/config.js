@@ -72,7 +72,8 @@ module.exports = {
 		},
 
 		iconfont: {
-			fontName: 'icons'
+			fontName: 'icons',
+			formats: ['woff', 'woff2']
 		},
 
 		favicons: {
