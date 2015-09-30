@@ -11,6 +11,7 @@
 ### Changed
 - Swap csso for cssnano.
 - Don't log notify success messages.
+- Optimize gulp task run order.
 
 ### Fixed
 - Include vendor.js file.
