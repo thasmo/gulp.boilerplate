@@ -1,13 +1,8 @@
 // build.js
 
-var gulp = require('gulp');
+var gulp = require('gulp'),
+	sequence = require('run-sequence');
 
-gulp.task('build', [
-	'common',
-	'templates',
-	'styles',
-	'scripts',
-	'images',
-	'icons',
-	'fonts'
-]);
+gulp.task('build', ['setup'], function(callback) {
+	sequence(['common', 'templates', 'styles', 'scripts', 'images', 'icons', 'fonts'], callback);
+});

@@ -40,6 +40,7 @@
     "del": "~2.0",
     "browser-sync": "~2.9",
     "require-dir": "~0.3",
-    "favicons": "~3.1"
+    "favicons": "~3.1",
+    "run-sequence": "~1.1"
   }
 }
