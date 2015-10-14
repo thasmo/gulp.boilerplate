@@ -13,6 +13,10 @@ gulp.task('templates', ['templates:common']);
 gulp.task('templates:common', function() {
 	var name = 'Templates';
 
+	if($.util.env.watch) {
+		gulp.watch(path.source.template + '**/*.jade', ['templates:common']);
+	}
+
 	return gulp.src(path.source.template + '*.jade')
 		.pipe($.plumber(helper.error))
 		.pipe($.jade(config.plugin.jade))

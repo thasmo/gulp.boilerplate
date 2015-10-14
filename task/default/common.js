@@ -9,6 +9,10 @@ var gulp = require('gulp'),
 gulp.task('common', function() {
 	var name = 'Common';
 
+	if($.util.env.watch) {
+		gulp.watch(path.source.main + '*.*', ['common']);
+	}
+
 	return gulp.src(path.source.main + '*.*')
 		.pipe($.plumber(helper.error))
 		.pipe(gulp.dest(path.public.main))

@@ -13,6 +13,10 @@ gulp.task('fonts', ['fonts:common']);
 gulp.task('fonts:common', function() {
 	var name = 'Fonts';
 
+	if($.util.env.watch) {
+		gulp.watch(path.source.font + '**/*.svg', ['fonts:common']);
+	}
+
 	return gulp.src(path.source.font + '**/*.svg')
 		.pipe($.plumber(helper.error))
 		.pipe($.iconfont(config.plugin.iconfont))

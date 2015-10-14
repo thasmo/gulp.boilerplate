@@ -1,7 +1,10 @@
 // default.js
 
-var gulp = require('gulp');
+var gulp = require('gulp'),
+	$ = require('gulp-load-plugins')(),
+	sequence = require('run-sequence');
 
-gulp.task('default', ['build'], function() {
-	gulp.start('watch');
+gulp.task('default', function(callback) {
+	$.util.env.watch = true;
+	sequence(['build', 'serve'], callback);
 });

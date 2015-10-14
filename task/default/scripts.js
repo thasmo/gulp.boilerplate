@@ -13,6 +13,10 @@ gulp.task('scripts', ['scripts:lint', 'scripts:common', 'scripts:vendor']);
 gulp.task('scripts:lint', function() {
 	var name = 'Lint Scripts';
 
+	if($.util.env.watch) {
+		gulp.watch([path.source.script + '**/*.js', '!' + path.source.script + 'vendor/**'], ['scripts:lint']);
+	}
+
 	return gulp.src([path.source.script + '**/*.js', '!' + path.source.script + 'vendor/**'])
 		.pipe($.plumber(helper.error))
 		.pipe($.xo(config.plugin.xo))
@@ -23,6 +27,10 @@ gulp.task('scripts:lint', function() {
 // Common
 gulp.task('scripts:common', function() {
 	var name = 'Common Scripts';
+
+	if($.util.env.watch) {
+		gulp.watch(path.source.script + '**/*.{js,coffee}', ['scripts:common']);
+	}
 
 	return gulp.src(path.source.script + '*.{js,coffee}')
 		.pipe($.plumber(helper.error))
@@ -40,6 +48,10 @@ gulp.task('scripts:common', function() {
 // Vendor
 gulp.task('scripts:vendor', function() {
 	var name = 'Vendor Scripts';
+
+	if($.util.env.watch) {
+		gulp.watch(path.source.script + 'vendor/**/*.js', ['scripts:vendor']);
+	}
 
 	return gulp.src(path.source.script + 'vendor/**/*.js')
 		.pipe($.plumber(helper.error))

@@ -12,6 +12,10 @@ gulp.task('styles', ['styles:common']);
 gulp.task('styles:common', function() {
 	var name = 'Styles';
 
+	if($.util.env.watch) {
+		gulp.watch(path.source.style + '**/*.scss', ['styles:common']);
+	}
+
 	return gulp.src(path.source.style + '*.scss')
 		.pipe($.plumber(helper.error))
 		.pipe($.sourcemaps.init())

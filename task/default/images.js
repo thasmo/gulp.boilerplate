@@ -17,6 +17,10 @@ gulp.task('images:common', function() {
 			restore: true
 		});
 
+	if($.util.env.watch) {
+		gulp.watch(path.source.image + 'common/**/*.{png,jpg,gif,svg}', ['images:common']);
+	}
+
 	return gulp.src(path.source.image + 'common/**/*.{png,jpg,gif,svg}')
 		.pipe($.plumber(helper.error))
 		.pipe($.changed(path.public.image))
@@ -34,6 +38,11 @@ gulp.task('images:common', function() {
 
 // Application
 gulp.task('images:application', function(callback) {
+
+	if($.util.env.watch) {
+		gulp.watch(path.source.image + 'appearance/application.png', ['images:application']);
+	}
+
 	favicons(config.plugin.favicons, function() {
 		callback();
 	});
