@@ -12,6 +12,8 @@
 - Swap csso for cssnano.
 - Don't log notify success messages.
 - Optimize gulp task run order.
+- Use the `watch` flag instead of a separate task.
+- Rename `production` flag to `optimize`.
 
 ### Fixed
 - Include vendor.js file.
