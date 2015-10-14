@@ -1,10 +1,10 @@
 // serve.js
 
-var gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-	server = require('browser-sync'),
-	config = require('../config'),
-	path = require('../path');
+var gulp = require('gulp');
+var $ = require('gulp-load-plugins')();
+var server = require('browser-sync');
+var config = require('../config');
+var path = require('../path');
 
 gulp.task('serve', ['serve:common']);
 

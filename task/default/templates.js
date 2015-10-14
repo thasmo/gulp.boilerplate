@@ -1,10 +1,10 @@
 // templates.js
 
-var gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-	config = require('../config'),
-	helper = require('../helper'),
-	path = require('../path');
+var gulp = require('gulp');
+var $ = require('gulp-load-plugins')();
+var config = require('../config');
+var helper = require('../helper');
+var path = require('../path');
 
 // Base
 gulp.task('templates', ['templates:common']);

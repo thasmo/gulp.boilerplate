@@ -1,21 +1,21 @@
 // images.js
 
-var gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-	favicons = require('favicons'),
-	config = require('../config'),
-	helper = require('../helper'),
-	path = require('../path');
+var gulp = require('gulp');
+var $ = require('gulp-load-plugins')();
+var favicons = require('favicons');
+var config = require('../config');
+var helper = require('../helper');
+var path = require('../path');
 
 // Base
 gulp.task('images', ['images:common', 'images:application']);
 
 // Common
 gulp.task('images:common', function() {
-	var name = 'Common Images',
-		filter = $.filter('*.svg', {
-			restore: true
-		});
+	var name = 'Common Images';
+	var filter = $.filter('*.svg', {
+		restore: true
+	});
 
 	if($.util.env.watch) {
 		gulp.watch(path.source.image + 'common/**/*.{png,jpg,gif,svg}', ['images:common']);
