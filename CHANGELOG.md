@@ -1,6 +1,11 @@
 # Change Log
 
-## [Next][next] 
+## [Next][next]
+
+### Fixed
+- Fixed var declaration in the build task.
+
+## 0.2.0 - 2015-10-14
 
 ### Added
 - Support for webp images.
