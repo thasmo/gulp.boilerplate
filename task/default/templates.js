@@ -20,7 +20,7 @@ gulp.task('templates:common', function() {
 	return gulp.src(path.source.template + '*.jade')
 		.pipe($.plumber(helper.error))
 		.pipe($.jade(config.plugin.jade))
-		.pipe($.if($.util.env.production, $.htmlmin(config.plugin.htmlmin)))
+		.pipe($.if($.util.env.optimize, $.htmlmin(config.plugin.htmlmin)))
 		.pipe(gulp.dest(path.public.template))
 		.pipe($.duration(name))
 		.pipe(helper.success(name));

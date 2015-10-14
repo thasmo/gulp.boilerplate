@@ -24,7 +24,7 @@ gulp.task('images:common', function() {
 	return gulp.src(path.source.image + 'common/**/*.{png,jpg,gif,svg}')
 		.pipe($.plumber(helper.error))
 		.pipe($.changed(path.public.image))
-		.pipe($.util.env.production ? $.imagemin(config.plugin.imagemin) : $.util.noop())
+		.pipe($.util.env.optimize ? $.imagemin(config.plugin.imagemin) : $.util.noop())
 		.pipe(gulp.dest(path.public.image + 'common/'))
 		.pipe(filter)
 		.pipe($.svg2png())

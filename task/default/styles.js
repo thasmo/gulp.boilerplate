@@ -22,7 +22,7 @@ gulp.task('styles:common', function() {
 		.pipe($.include())
 		.pipe($.sass())
 		.pipe($.autoprefixer())
-		.pipe($.if($.util.env.production, $.cssnano()))
+		.pipe($.if($.util.env.optimize, $.cssnano()))
 		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest(path.public.style))
 		.pipe($.duration(name))

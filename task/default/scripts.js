@@ -38,7 +38,7 @@ gulp.task('scripts:common', function() {
 		.pipe($.include())
 		.pipe($.if(/\.coffee$/, $.coffee()))
 		.pipe($.jsvalidate())
-		.pipe($.if($.util.env.production, $.uglify()))
+		.pipe($.if($.util.env.optimize, $.uglify()))
 		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest(path.public.script))
 		.pipe($.duration(name))
@@ -56,7 +56,7 @@ gulp.task('scripts:vendor', function() {
 	return gulp.src(path.source.script + 'vendor/**/*.js')
 		.pipe($.plumber(helper.error))
 		.pipe($.include())
-		.pipe($.if($.util.env.production, $.uglify()))
+		.pipe($.if($.util.env.optimize, $.uglify()))
 		.pipe(gulp.dest(path.public.script + 'vendor/'))
 		.pipe($.duration(name))
 		.pipe(helper.success(name));
