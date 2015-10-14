@@ -1,11 +1,13 @@
 # Change Log
 
-## [Next][next]
+## [next]
+
+## [0.2.1] - 2015-10-14
 
 ### Fixed
 - Fixed var declaration in the build task.
 
-## 0.2.0 - 2015-10-14
+## [0.2.0] - 2015-10-14
 
 ### Added
 - Support for webp images.
@@ -29,4 +31,6 @@
 ### Added
 - Lots of good stuff.
 
-[next]: https://github.com/thasmo/gulp.boilerplate/compare/v0.1.0...HEAD
+[next]: https://github.com/thasmo/gulp.boilerplate/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/thasmo/gulp.boilerplate/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/thasmo/gulp.boilerplate/compare/v0.1.0...v0.2.0
