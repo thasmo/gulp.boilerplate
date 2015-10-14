@@ -30,6 +30,10 @@ module.exports = {
 			]
 		},
 
+		xo: {
+			quiet: true
+		},
+
 		svgsprite: {
 			svg: {
 				dimensionAttributes: false
@@ -68,7 +72,8 @@ module.exports = {
 		},
 
 		iconfont: {
-			fontName: 'icons'
+			fontName: 'icons',
+			formats: ['woff', 'woff2']
 		},
 
 		favicons: {
@@ -87,7 +92,9 @@ module.exports = {
 		server: {
 			server: {
 				baseDir: path.public.main
-			}
+			},
+			reloadDebounce: 250,
+			online: true
 		}
 	}
 };

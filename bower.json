@@ -7,6 +7,8 @@
     "sanitize-css": "~1.1",
     "modernizr": "~2.8",
     "html5shiv": "~3.7",
-    "velocity": "~1.2"
+    "velocity": "~1.2",
+    "metaquery": "~1.2",
+    "picturefill": "~3.0"
   }
 }

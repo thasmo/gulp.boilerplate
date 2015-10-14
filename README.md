@@ -7,9 +7,12 @@ Personal Gulp boilerplate for basic frontend web projects.
 * Jade Support
 * Image Optimization
 * SVG-Sprite Generation
+* WebP Generation
 * Icon-Font Generation
 * Browser-Sync Integration
 * Auto-Prefixer Integration
+* Metaquery Integration
+* Picturefill Integration
 * Source-Map Integration
 * Resource Minification
 * Notification Support
@@ -27,13 +30,16 @@ Personal Gulp boilerplate for basic frontend web projects.
 Run the `default` task by executing `gulp`. Run specific tasks by executing `gulp <task>`.
 
 - **default**  
-  Runs the `build` and the `watch` task.
+  Runs the `build` and `serve` tasks and watches file changes by default.
 
 - **build**  
-  Runs the `common`, `templates`, `styles`, `scripts`, `images`, `icons` and `fonts` task.
+  Runs the `common`, `templates`, `styles`, `scripts`, `images`, `icons` and `fonts` tasks.
+
+- **serve**  
+  Starts `browser-sync` which is serving files from within the public directory.
 
 - **setup**  
-  Currently it only runs `bower install` to install dependencies defined in the `bower.json` file.
+  Currently only runs `bower install` to install dependencies defined in the `bower.json` file.
   
 - **common**  
   Copies general files from within the root source directory to the public directory.
@@ -45,7 +51,7 @@ Run the `default` task by executing `gulp`. Run specific tasks by executing `gul
   Compiles `scss` files and writes them to the public styles directory.
 
 - **scripts**  
-  Compiles `coffeescript` files and writes them to the public scripts directory.
+  Compiles `coffeescript` and `javascript` files and writes them to the public scripts directory.
 
 - **images**  
   Reads images from the images directory and copies them to the public images directory.
@@ -56,10 +62,10 @@ Run the `default` task by executing `gulp`. Run specific tasks by executing `gul
 - **fonts**  
   Reads SVG files from the icons directory and generates an icon-font.
 
-- **watch**  
-  Starts `browser-sync` which is serving the public directory and it re-runs tasks when source files change.
-
 ### Flags
 
-- **production**  
-  Use `--production` with any task to enable optimizations for production output e.g. minification etc.
+- **watch**  
+  Use the `--watch` flag on any task to enable file-watching and automatic re-run on changes.
+
+- **optimize**  
+  Use the `--optimize` flag on any task to enable optimizations for production output e.g. minification etc.

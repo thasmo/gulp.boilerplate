@@ -1,10 +1,10 @@
 // templates.js
 
-var gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-	config = require('../config'),
-	helper = require('../helper'),
-	path = require('../path');
+var gulp = require('gulp');
+var $ = require('gulp-load-plugins')();
+var config = require('../config');
+var helper = require('../helper');
+var path = require('../path');
 
 // Base
 gulp.task('templates', ['templates:common']);
@@ -13,10 +13,14 @@ gulp.task('templates', ['templates:common']);
 gulp.task('templates:common', function() {
 	var name = 'Templates';
 
+	if($.util.env.watch) {
+		gulp.watch(path.source.template + '**/*.jade', ['templates:common']);
+	}
+
 	return gulp.src(path.source.template + '*.jade')
 		.pipe($.plumber(helper.error))
 		.pipe($.jade(config.plugin.jade))
-		.pipe($.if($.util.env.production, $.htmlmin(config.plugin.htmlmin)))
+		.pipe($.if($.util.env.optimize, $.htmlmin(config.plugin.htmlmin)))
 		.pipe(gulp.dest(path.public.template))
 		.pipe($.duration(name))
 		.pipe(helper.success(name));
