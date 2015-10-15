@@ -36,6 +36,7 @@
     "gulp-duration": "~0.0",
     "gulp-htmlmin": "~1.2",
     "gulp-xo": "~0.4",
+    "gulp-zip": "~3.0",
     "del": "~2.0",
     "browser-sync": "~2.9",
     "require-dir": "~0.3",

@@ -3,6 +3,9 @@ var path = require('./path');
 
 module.exports = {
 	task: {
+		package: {
+			name: 'build.zip'
+		},
 		watch: {
 			exclude: /\.map$/
 		}

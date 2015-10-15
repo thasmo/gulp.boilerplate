@@ -2,6 +2,9 @@
 
 ## [next]
 
+### Added
+- Add packaging task.
+
 ### Removed
 - Remove SVG to PNG generation.
 
