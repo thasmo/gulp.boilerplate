@@ -11,7 +11,7 @@ gulp.task('images', ['images:common']);
 
 // Common
 gulp.task('images:common', function() {
-	var name = 'Common Images';
+	var name = 'Images';
 
 	if($.util.env.watch) {
 		gulp.watch(path.source.image + 'common/**/*.{png,jpg,gif,svg}', ['images:common']);
