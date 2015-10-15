@@ -2,6 +2,9 @@
 
 ## [next]
 
+### Removed
+- Remove SVG to PNG generation.
+
 ## [0.2.1] - 2015-10-14
 
 ### Fixed

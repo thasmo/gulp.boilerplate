@@ -22,10 +22,6 @@ gulp.task('icons:common', function() {
 		.pipe($.if($.util.env.optimize, $.imagemin(config.plugin.imagemin)))
 		.pipe($.svgSprite(config.plugin.svgsprite))
 		.pipe(gulp.dest(path.public.image))
-		.pipe($.filter('*.svg'))
-		.pipe($.svg2png())
-		.pipe($.if($.util.env.optimize, $.imagemin(config.plugin.imagemin)))
-		.pipe(gulp.dest(path.public.image))
 		.pipe($.duration(name))
 		.pipe(helper.success(name));
 });

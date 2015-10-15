@@ -13,9 +13,6 @@ gulp.task('images', ['images:common', 'images:application']);
 // Common
 gulp.task('images:common', function() {
 	var name = 'Common Images';
-	var filter = $.filter('*.svg', {
-		restore: true
-	});
 
 	if($.util.env.watch) {
 		gulp.watch(path.source.image + 'common/**/*.{png,jpg,gif,svg}', ['images:common']);
@@ -26,10 +23,7 @@ gulp.task('images:common', function() {
 		.pipe($.changed(path.public.image))
 		.pipe($.util.env.optimize ? $.imagemin(config.plugin.imagemin) : $.util.noop())
 		.pipe(gulp.dest(path.public.image + 'common/'))
-		.pipe(filter)
-		.pipe($.svg2png())
-		.pipe(gulp.dest(path.public.image + 'common/'))
-		.pipe(filter.restore)
+		.pipe($.filter('*.{png,jpg,gif}'))
 		.pipe($.webp())
 		.pipe(gulp.dest(path.public.image + 'common/'))
 		.pipe($.duration(name))
