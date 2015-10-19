@@ -9,6 +9,7 @@
 ### Changed
 - Update sanitize.css.
 - Restructure task files.
+- Use native bower object in the setup task.
 
 ### Removed
 - Remove SVG to PNG generation.

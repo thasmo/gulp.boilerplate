@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var bower = require('bower');
 var path = require('../path');
 
 // Base
@@ -14,5 +15,5 @@ gulp.task('setup:bower', function() {
 		gulp.watch(path.setup.bower, ['setup:bower']);
 	}
 
-	return $.bower();
+	return bower.commands.install();
 });
