@@ -2,8 +2,8 @@
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-var helper = require('../helper');
-var path = require('../path');
+var helper = require('../../helper');
+var path = require('../../path');
 
 // Base
 gulp.task('styles', ['styles:common']);

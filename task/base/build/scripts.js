@@ -2,9 +2,9 @@
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-var config = require('../config');
-var helper = require('../helper');
-var path = require('../path');
+var config = require('../../config');
+var helper = require('../../helper');
+var path = require('../../path');
 
 // Base
 gulp.task('scripts', ['scripts:lint', 'scripts:common', 'scripts:vendor']);
@@ -29,14 +29,13 @@ gulp.task('scripts:common', function() {
 	var name = 'Common Scripts';
 
 	if($.util.env.watch) {
-		gulp.watch(path.source.script + '**/*.{js,coffee}', ['scripts:common']);
+		gulp.watch(path.source.script + '**/*.js', ['scripts:common']);
 	}
 
-	return gulp.src(path.source.script + '*.{js,coffee}')
+	return gulp.src(path.source.script + '*.js')
 		.pipe($.plumber(helper.error))
 		.pipe($.sourcemaps.init())
 		.pipe($.include())
-		.pipe($.if(/\.coffee$/, $.coffee()))
 		.pipe($.jsvalidate())
 		.pipe($.if($.util.env.optimize, $.uglify()))
 		.pipe($.sourcemaps.write('.'))
@@ -50,10 +49,10 @@ gulp.task('scripts:vendor', function() {
 	var name = 'Vendor Scripts';
 
 	if($.util.env.watch) {
-		gulp.watch(path.source.script + 'vendor/**/*.js', ['scripts:vendor']);
+		gulp.watch(path.source.script + 'vendor/*.js', ['scripts:vendor']);
 	}
 
-	return gulp.src(path.source.script + 'vendor/**/*.js')
+	return gulp.src(path.source.script + 'vendor/*.js')
 		.pipe($.plumber(helper.error))
 		.pipe($.include())
 		.pipe($.if($.util.env.optimize, $.uglify()))

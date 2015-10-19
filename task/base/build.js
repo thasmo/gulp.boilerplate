@@ -2,7 +2,8 @@
 
 var gulp = require('gulp');
 var sequence = require('run-sequence');
+var include = require('require-dir');
 
 gulp.task('build', ['setup'], function(callback) {
-	sequence(['common', 'templates', 'styles', 'scripts', 'images', 'icons', 'fonts'], callback);
+	sequence(Object.keys(include('build/')), callback);
 });

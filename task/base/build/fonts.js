@@ -2,9 +2,9 @@
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-var config = require('../config');
-var helper = require('../helper');
-var path = require('../path');
+var config = require('../../config');
+var helper = require('../../helper');
+var path = require('../../path');
 
 // Base
 gulp.task('fonts', ['fonts:common']);

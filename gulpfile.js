@@ -1,3 +1,7 @@
 // gulpfile.js
 
-require('require-dir')('./task/default');
+var include = require('require-dir');
+
+include('task/base/');
+include('task/base/build/');
+include('task/base/common/');

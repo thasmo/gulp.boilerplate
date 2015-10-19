@@ -7,10 +7,12 @@
 
 ### Changed
 - Update sanitize.css.
+- Restructure task files.
 
 ### Removed
 - Remove SVG to PNG generation.
 - Remove favicon generation.
+- Remove coffeescript support.
 
 ## [0.2.1] - 2015-10-14
 
