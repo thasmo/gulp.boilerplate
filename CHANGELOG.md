@@ -5,6 +5,9 @@
 ### Added
 - Add packaging task.
 
+### Changed
+- Update sanitize.css.
+
 ### Removed
 - Remove SVG to PNG generation.
 - Remove favicon generation.
