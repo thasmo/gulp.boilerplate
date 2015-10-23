@@ -2,7 +2,7 @@
   "name": "gulp.boilerplate",
   "license": "MIT",
   "dependencies": {
-    "sanitize-css": "10up/sanitize.css#v2.1.1",
+    "sanitize-css": "~3.0",
     "jquery": "~2.1",
     "bourbon": "~4.2",
     "modernizr": "~2.8",
