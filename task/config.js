@@ -4,6 +4,13 @@ var path = require('./path');
 
 module.exports = {
 	task: {
+		setup: {
+			modernizr: {
+				classPrefix: 'has-',
+				options: [],
+				'feature-detects': []
+			}
+		},
 		package: {
 			name: 'build.zip'
 		},

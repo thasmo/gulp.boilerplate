@@ -5,7 +5,6 @@
     "sanitize-css": "~3.0",
     "jquery": "~2.1",
     "bourbon": "~4.2",
-    "modernizr": "~2.8",
     "html5shiv": "~3.7",
     "velocity": "~1.2",
     "metaquery": "~1.2",
