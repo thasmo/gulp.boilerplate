@@ -7,7 +7,9 @@ module.exports = {
 		setup: {
 			modernizr: {
 				classPrefix: 'has-',
-				options: [],
+				options: [
+					'setClasses'
+				],
 				'feature-detects': []
 			}
 		},
