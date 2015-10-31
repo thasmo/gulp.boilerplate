@@ -38,43 +38,6 @@ module.exports = {
 			quiet: true
 		},
 
-		svgsprite: {
-			svg: {
-				dimensionAttributes: false
-			},
-			shape: {
-				id: {
-					separator: '--'
-				},
-				spacing: {
-					padding: 1
-				}
-			},
-			mode: {
-				view: {
-					dest: '.',
-					mixin: 'icon',
-					prefix: '.icon-%s',
-					sprite: '../image/icon.svg',
-					dimensions: true,
-					bust: false,
-					render: {
-						scss: {
-							dest: '/' + path.source.style + 'tmp/_icon.scss',
-							template: './task/template/icon.scss'
-						}
-					}
-				}
-			},
-			variables: {
-				png: function() {
-					return function(sprite, render) {
-						return render(sprite).split('.svg').join('.png');
-					}
-				}
-			}
-		},
-
 		iconfont: {
 			fontName: 'icons',
 			formats: ['woff', 'woff2']
