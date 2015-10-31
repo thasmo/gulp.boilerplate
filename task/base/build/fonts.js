@@ -18,6 +18,14 @@ gulp.task('fonts:common', function() {
 	return gulp.src(path.source.font + '**/*.svg')
 		.pipe($.plumber(helper.error))
 		.pipe($.iconfont(config.plugin.iconfont))
+		.on('glyphs', function(glyphs) {
+			gulp.src('task/template/font.scss')
+				.pipe($.consolidate('lodash', {
+					glyphs: glyphs,
+					path: '../font/'
+				}))
+				.pipe(gulp.dest(path.source.style + '.tmp/'));
+		})
 		.pipe(gulp.dest(path.public.font))
 		.pipe($.duration(name))
 		.pipe(helper.success(name));
