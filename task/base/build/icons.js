@@ -13,9 +13,7 @@ gulp.task('icons', ['icons:common']);
 gulp.task('icons:common', function() {
 	var name = 'Icons';
 
-	if($.util.env.watch) {
-		gulp.watch(path.source.image + 'icon/**/*.svg', ['icons:common']);
-	}
+	helper.watch(path.source.image + 'icon/**/*.svg', ['icons:common']);
 
 	return gulp.src(path.source.image + 'icon/**/*.svg')
 		.pipe($.plumber(helper.error))

@@ -13,9 +13,7 @@ gulp.task('scripts', ['scripts:lint', 'scripts:common', 'scripts:vendor']);
 gulp.task('scripts:lint', function() {
 	var name = 'Lint Scripts';
 
-	if($.util.env.watch) {
-		gulp.watch([path.source.script + '**/*.js', '!' + path.source.script + 'vendor/**'], ['scripts:lint']);
-	}
+	helper.watch([path.source.script + '**/*.js', '!' + path.source.script + 'vendor/**'], ['scripts:lint']);
 
 	return gulp.src([path.source.script + '**/*.js', '!' + path.source.script + 'vendor/**'])
 		.pipe($.plumber(helper.error))
@@ -28,9 +26,7 @@ gulp.task('scripts:lint', function() {
 gulp.task('scripts:common', function() {
 	var name = 'Common Scripts';
 
-	if($.util.env.watch) {
-		gulp.watch(path.source.script + '**/*.js', ['scripts:common']);
-	}
+	helper.watch(path.source.script + '**/*.js', ['scripts:common']);
 
 	return gulp.src(path.source.script + '*.js')
 		.pipe($.plumber(helper.error))
@@ -48,9 +44,7 @@ gulp.task('scripts:common', function() {
 gulp.task('scripts:vendor', function() {
 	var name = 'Vendor Scripts';
 
-	if($.util.env.watch) {
-		gulp.watch(path.source.script + 'vendor/*.js', ['scripts:vendor']);
-	}
+	helper.watch(path.source.script + 'vendor/*.js', ['scripts:vendor']);
 
 	return gulp.src(path.source.script + 'vendor/*.js')
 		.pipe($.plumber(helper.error))

@@ -1,6 +1,8 @@
 // helper.js
 
+var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var watch = {};
 
 module.exports = {
 	error: $.notify.onError({
@@ -16,5 +18,14 @@ module.exports = {
 			message: message || 'Task finished.',
 			onLast: true
 		});
+	},
+
+	watch: function(glob, tasks) {
+		if(!$.util.env.watch && !$.util.env.w || watch[glob]) {
+			return;
+		}
+
+		watch[glob] = true;
+		gulp.watch(glob, tasks);
 	}
 };

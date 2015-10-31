@@ -13,9 +13,7 @@ gulp.task('images', ['images:common']);
 gulp.task('images:common', function() {
 	var name = 'Images';
 
-	if($.util.env.watch) {
-		gulp.watch(path.source.image + 'common/**/*.{png,jpg,gif,svg}', ['images:common']);
-	}
+	helper.watch(path.source.image + 'common/**/*.{png,jpg,gif,svg}', ['images:common']);
 
 	return gulp.src(path.source.image + 'common/**/*.{png,jpg,gif,svg}')
 		.pipe($.plumber(helper.error))

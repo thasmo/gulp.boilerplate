@@ -10,10 +10,6 @@ gulp.task('setup', ['setup:bower']);
 
 // Bower
 gulp.task('setup:bower', function() {
-
-	if($.util.env.watch) {
-		gulp.watch(path.setup.bower, ['setup:bower']);
-	}
-
+	helper.watch(path.setup.bower, ['setup:bower']);
 	return bower.commands.install();
 });
