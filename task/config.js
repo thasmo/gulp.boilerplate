@@ -43,19 +43,6 @@ module.exports = {
 			formats: ['woff', 'woff2']
 		},
 
-		favicons: {
-			files: {
-				src: path.source.image + 'appearance/application.png',
-				dest: path.public.static,
-				iconsPath: '/static/'
-			},
-			settings: {
-				appName: 'gulp.js Boilerplate',
-				appDescription: 'Personal boilerplate for gulp.js projects.',
-				background: '#f16529'
-			}
-		},
-
 		server: {
 			server: {
 				baseDir: path.public.main
