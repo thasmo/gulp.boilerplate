@@ -10,6 +10,9 @@
 - Update sanitize.css.
 - Restructure task files.
 - Use native bower object in the setup task.
+- Use gulp-svgstore instead of gulp-svg-sprite.
+- Update Modernizr to version 3.2.
+- Make watching files more robust.
 
 ### Removed
 - Remove SVG to PNG generation.
