@@ -38,6 +38,7 @@
     "del": "~2.0",
     "browser-sync": "~2.9",
     "require-dir": "~0.3",
-    "run-sequence": "~1.1"
+    "run-sequence": "~1.1",
+    "bower": "~1.6",
   }
 }
