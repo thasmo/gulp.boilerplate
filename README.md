@@ -2,33 +2,33 @@
 > Personal gulp boilerplate for basic frontend web projects.
 
 ## Project Features
-* jQuery
-* Modernizr
-* Picturefill
-* Metaquery
-* Velocity
+- jQuery
+- Modernizr
+- Picturefill
+- Metaquery
+- Velocity
 
 ## Build-Task Features
-* Sass Suport
-* Jade Support
-* Image Optimization
-* SVG-Sprite Generation
-* WebP Generation
-* Icon-Font Generation
-* Bourbon Integration
-* Browser-Sync Integration
-* Auto-Prefixer Integration
-* Source-Map Integration
-* Resource Minification
-* Notification Support
+- Sass Suport
+- Jade Support
+- Image Optimization
+- SVG-Sprite Generation
+- WebP Generation
+- Icon-Font Generation
+- Bourbon Integration
+- Browser-Sync Integration
+- Auto-Prefixer Integration
+- Source-Map Integration
+- Resource Minification
+- Notification Support
 
 ## Requirements
-* node.js
-* Python 2.7
+- node.js
+- Python 2.7
 
 ## Browser Compatibility
-* Evergreen Browsers
-* IE 10+
+- Evergreen Browsers
+- IE 10+
 
 ## Tasks
 
