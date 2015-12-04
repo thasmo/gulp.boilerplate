@@ -27,5 +27,13 @@ module.exports = {
 
 		watch[glob] = true;
 		gulp.watch(glob, tasks);
+
+		$.util.log(
+			'Watching',
+			'\'' + $.util.colors.cyan(glob) + '\'',
+			'for tasks',
+			'\'' + $.util.colors.cyan(tasks.join(',')) + '\'',
+			'...'
+		);
 	}
 };
