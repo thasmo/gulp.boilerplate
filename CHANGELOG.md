@@ -18,6 +18,7 @@
 - Remove SVG to PNG generation.
 - Remove favicon generation.
 - Remove coffeescript support.
+- Remove the gulp-duration plugin.
 
 ## [0.2.1] - 2015-10-14
 

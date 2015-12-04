@@ -23,6 +23,5 @@ gulp.task('images:common', function() {
 		.pipe($.filter('*.{png,jpg,gif}'))
 		.pipe($.webp())
 		.pipe(gulp.dest(path.public.image + 'common/'))
-		.pipe($.duration(name))
 		.pipe(helper.success(name));
 });

@@ -27,6 +27,5 @@ gulp.task('fonts:common', function() {
 				.pipe(gulp.dest(path.source.style + '.tmp/'));
 		})
 		.pipe(gulp.dest(path.public.font))
-		.pipe($.duration(name))
 		.pipe(helper.success(name));
 });

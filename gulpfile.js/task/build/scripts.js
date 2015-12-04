@@ -18,7 +18,6 @@ gulp.task('scripts:lint', function() {
 	return gulp.src([path.source.script + '**/*.js', '!' + path.source.script + 'vendor/**'])
 		.pipe($.plumber(helper.error))
 		.pipe($.xo(config.plugin.xo))
-		.pipe($.duration(name))
 		.pipe(helper.success(name));
 });
 
@@ -36,7 +35,6 @@ gulp.task('scripts:common', function() {
 		.pipe($.if($.util.env.optimize, $.uglify()))
 		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest(path.public.script))
-		.pipe($.duration(name))
 		.pipe(helper.success(name));
 });
 
@@ -51,6 +49,5 @@ gulp.task('scripts:vendor', function() {
 		.pipe($.include())
 		.pipe($.if($.util.env.optimize, $.uglify()))
 		.pipe(gulp.dest(path.public.script + 'vendor/'))
-		.pipe($.duration(name))
 		.pipe(helper.success(name));
 });

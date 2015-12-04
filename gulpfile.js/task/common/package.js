@@ -14,6 +14,5 @@ gulp.task('package', ['build'], function() {
 		.pipe($.plumber(helper.error))
 		.pipe($.zip(config.task.package.name))
 		.pipe(gulp.dest('.'))
-		.pipe($.duration(name))
 		.pipe(helper.success(name));
 });

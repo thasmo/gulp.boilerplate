@@ -14,6 +14,5 @@ gulp.task('common', function() {
 	return gulp.src(path.source.main + '*.*')
 		.pipe($.plumber(helper.error))
 		.pipe(gulp.dest(path.public.main))
-		.pipe($.duration(name))
 		.pipe(helper.success(name));
 });
