@@ -5,6 +5,7 @@
 ### Added
 - Add packaging task.
 - Add reset task to the build queue.
+- Log file-watching to the console.
 
 ### Changed
 - Update sanitize.css.
