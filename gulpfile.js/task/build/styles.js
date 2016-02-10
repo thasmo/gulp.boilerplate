@@ -2,17 +2,17 @@
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var config = require('../../config');
 var helper = require('../../helper');
 var path = require('../../path');
 
-// Base
-gulp.task('styles', ['styles:common']);
+// Define task.
+var task = function() {
 
-// Common
-gulp.task('styles:common', function() {
-	var name = 'Styles';
-
-	helper.watch(path.source.style + '**/*.scss', ['styles:common']);
+	helper.watch(
+		path.source.style + '**/*.scss',
+		gulp.task('styles')
+	);
 
 	return gulp.src(path.source.style + '*.scss')
 		.pipe($.plumber(helper.error))
@@ -21,7 +21,13 @@ gulp.task('styles:common', function() {
 		.pipe($.sass())
 		.pipe($.autoprefixer())
 		.pipe($.if($.util.env.optimize, $.cssnano()))
-		.pipe($.sourcemaps.write('.'))
+		.pipe($.sourcemaps.write('.', config.plugin.sourcemaps.write))
 		.pipe(gulp.dest(path.public.style))
-		.pipe(helper.success(name));
-});
+		.pipe(helper.success(task.displayName));
+};
+
+task.displayName = 'styles';
+task.description = 'Compile styles.';
+
+// Export task.
+module.exports = task;

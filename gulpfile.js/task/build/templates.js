@@ -6,19 +6,24 @@ var config = require('../../config');
 var helper = require('../../helper');
 var path = require('../../path');
 
-// Base
-gulp.task('templates', ['templates:common']);
+// Define task.
+var task = function() {
 
-// Common
-gulp.task('templates:common', function() {
-	var name = 'Templates';
-
-	helper.watch(path.source.template + '**/*.jade', ['templates:common']);
+	helper.watch(
+		path.source.template + '**/*.jade',
+		gulp.task('templates')
+	);
 
 	return gulp.src(path.source.template + '*.jade')
 		.pipe($.plumber(helper.error))
 		.pipe($.jade(config.plugin.jade))
 		.pipe($.if($.util.env.optimize, $.htmlmin(config.plugin.htmlmin)))
 		.pipe(gulp.dest(path.public.template))
-		.pipe(helper.success(name));
-});
+		.pipe(helper.success(task.displayName));
+};
+
+task.displayName = 'templates';
+task.description = 'Compile templates.';
+
+// Export task.
+module.exports = task;

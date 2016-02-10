@@ -10,7 +10,7 @@ module.exports = {
 		message: '<%= error.message %>'
 	}),
 
-	success: function (task, message) {
+	success: function(task, message) {
 		$.notify.logLevel(1);
 
 		return $.notify({
@@ -31,8 +31,6 @@ module.exports = {
 		$.util.log(
 			'Watching',
 			'\'' + $.util.colors.cyan(glob) + '\'',
-			'for tasks',
-			'\'' + $.util.colors.cyan(tasks.join(',')) + '\'',
 			'...'
 		);
 	}

@@ -6,20 +6,19 @@ var config = require('../../config');
 var helper = require('../../helper');
 var path = require('../../path');
 
-// Base
-gulp.task('fonts', ['fonts:common']);
+// Define task.
+var task = function() {
 
-// Common
-gulp.task('fonts:common', function() {
-	var name = 'Fonts';
-
-	gulp.watch(path.source.font + '**/*.svg', ['fonts:common']);
+	gulp.watch(
+		path.source.font + '**/*.svg',
+		gulp.task('fonts')
+	);
 
 	return gulp.src(path.source.font + '**/*.svg')
 		.pipe($.plumber(helper.error))
 		.pipe($.iconfont(config.plugin.iconfont))
 		.on('glyphs', function(glyphs) {
-			gulp.src('task/template/font.scss')
+			gulp.src('gulpfile.js/template/font.scss')
 				.pipe($.consolidate('lodash', {
 					glyphs: glyphs,
 					path: '../font/'
@@ -27,5 +26,11 @@ gulp.task('fonts:common', function() {
 				.pipe(gulp.dest(path.source.style + '.tmp/'));
 		})
 		.pipe(gulp.dest(path.public.font))
-		.pipe(helper.success(name));
-});
+		.pipe(helper.success(task.displayName));
+};
+
+task.displayName = 'fonts';
+task.description = 'Generate web-fonts.';
+
+// Export task.
+module.exports = task;

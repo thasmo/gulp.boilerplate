@@ -6,14 +6,13 @@ var config = require('../../config');
 var helper = require('../../helper');
 var path = require('../../path');
 
-// Base
-gulp.task('images', ['images:common']);
+// Define task.
+var task = function() {
 
-// Common
-gulp.task('images:common', function() {
-	var name = 'Images';
-
-	helper.watch(path.source.image + 'common/**/*.{png,jpg,gif,svg}', ['images:common']);
+	helper.watch(
+		path.source.image + 'common/**/*.{png,jpg,gif,svg}',
+		gulp.task('images')
+	);
 
 	return gulp.src(path.source.image + 'common/**/*.{png,jpg,gif,svg}')
 		.pipe($.plumber(helper.error))
@@ -23,5 +22,11 @@ gulp.task('images:common', function() {
 		.pipe($.filter('*.{png,jpg,gif}'))
 		.pipe($.webp())
 		.pipe(gulp.dest(path.public.image + 'common/'))
-		.pipe(helper.success(name));
-});
+		.pipe(helper.success(task.displayName));
+};
+
+task.displayName = 'images';
+task.description = 'Process images.';
+
+// Export task.
+module.exports = task;

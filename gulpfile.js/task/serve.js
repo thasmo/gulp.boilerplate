@@ -6,20 +6,24 @@ var server = require('browser-sync');
 var config = require('../config');
 var path = require('../path');
 
-gulp.task('serve', ['serve:common']);
-
-// Common
-gulp.task('serve:common', function(callback) {
+// Define task.
+var task = function(callback) {
 	server(config.plugin.server, function() {
 
-		if($.util.env.watch) {
-			gulp.watch(path.public.main + '**').on('change', function(file) {
-				if(!file.path.match(config.task.watch.exclude)) {
-					server.reload(file.path);
+		if($.util.env.watch || $.util.env.w) {
+			gulp.watch(path.public.main + '**').on('change', function(path) {
+				if(!path.match(config.task.watch.exclude)) {
+					server.reload(path);
 				}
 			});
 		}
 
 		callback();
 	});
-});
+};
+
+task.displayName = 'serve';
+task.description = 'Launch a local web-server for development.';
+
+// Export task.
+module.exports = task;

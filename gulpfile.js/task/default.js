@@ -1,10 +1,12 @@
 // default.js
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var sequence = require('run-sequence');
+var util = require('gulp-util');
 
-gulp.task('default', function(callback) {
-	$.util.env.watch = true;
-	sequence(['build', 'serve'], callback);
-});
+// Define task.
+var task = gulp.series('build', 'serve');
+task.displayName = 'default';
+task.description = 'Run the build and serve tasks.';
+
+// Export task.
+module.exports = task;

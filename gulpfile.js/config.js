@@ -52,6 +52,12 @@ module.exports = {
 			formats: ['woff', 'woff2']
 		},
 
+		sourcemaps: {
+			write: {
+				sourceRoot: null
+			}
+		},
+
 		server: {
 			server: {
 				baseDir: path.public.main
