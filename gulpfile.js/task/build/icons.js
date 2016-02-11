@@ -8,11 +8,7 @@ var path = require('../../path');
 
 // Define task.
 var task = function() {
-
-	helper.watch(
-		path.source.image + 'icon/**/*.svg',
-		gulp.task('icons')
-	);
+	helper.watch(path.source.image + 'icon/**/*.svg', task);
 
 	return gulp.src(path.source.image + 'icon/**/*.svg')
 		.pipe($.plumber(helper.error))

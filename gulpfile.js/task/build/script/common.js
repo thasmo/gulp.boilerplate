@@ -8,18 +8,14 @@ var path = require('../../../path');
 
 // Define task.
 var task = function() {
-
-	helper.watch(
-		path.source.script + '**/*.js',
-		gulp.task('scripts:common')
-	);
+	helper.watch(path.source.script + '**/*.js', task);
 
 	return gulp.src(path.source.script + '*.js')
 		.pipe($.plumber(helper.error))
 		.pipe($.sourcemaps.init())
-		.pipe($.include())
-		.pipe($.jsvalidate())
-		.pipe($.if($.util.env.optimize, $.uglify()))
+			.pipe($.include())
+			.pipe($.jsvalidate())
+			.pipe($.if($.util.env.optimize, $.uglify()))
 		.pipe($.sourcemaps.write('.', config.plugin.sourcemaps.write))
 		.pipe(gulp.dest(path.public.script))
 		.pipe(helper.success(task.displayName));

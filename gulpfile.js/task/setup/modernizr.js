@@ -15,7 +15,7 @@ var task = function(callback) {
 };
 
 task.displayName = 'setup:modernizr';
-task.description = 'SETUP:MODERNIZR';
+task.description = 'Install Modernizr and feature detections.';
 
 // Export task.
 module.exports = task;

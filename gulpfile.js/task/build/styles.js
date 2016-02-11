@@ -9,18 +9,15 @@ var path = require('../../path');
 // Define task.
 var task = function() {
 
-	helper.watch(
-		path.source.style + '**/*.scss',
-		gulp.task('styles')
-	);
+	helper.watch(path.source.style + '**/*.scss', task);
 
 	return gulp.src(path.source.style + '*.scss')
 		.pipe($.plumber(helper.error))
 		.pipe($.sourcemaps.init())
-		.pipe($.include())
-		.pipe($.sass())
-		.pipe($.autoprefixer())
-		.pipe($.if($.util.env.optimize, $.cssnano()))
+			.pipe($.include())
+			.pipe($.sass())
+			.pipe($.autoprefixer())
+			.pipe($.if($.util.env.optimize, $.cssnano()))
 		.pipe($.sourcemaps.write('.', config.plugin.sourcemaps.write))
 		.pipe(gulp.dest(path.public.style))
 		.pipe(helper.success(task.displayName));

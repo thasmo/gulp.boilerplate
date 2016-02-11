@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "gulp": "gulpjs/gulp#4.0",
-    "gulp-util": "~3.0",
+    "gulplog": "~1.0",
     "gulp-plumber": "~1.1",
     "gulp-svgstore": "~5.0",
     "gulp-load-plugins": "~1.2",
@@ -36,6 +36,7 @@
     "gulp-xo": "~0.7",
     "gulp-zip": "~3.1",
     "undertaker-forward-reference": "~1.0",
+    "minimist": "~1.2",
     "flat": "~2.0",
     "del": "~2.2",
     "browser-sync": "~2.11",

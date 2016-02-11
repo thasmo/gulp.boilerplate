@@ -7,14 +7,12 @@ var path = require('../../path');
 
 // Define task.
 var task = function() {
-	var name = 'Common';
-
-	helper.watch(path.source.main + '*.*', ['common']);
+	helper.watch(path.source.main + '*.*', task);
 
 	return gulp.src(path.source.main + '*.*')
 		.pipe($.plumber(helper.error))
 		.pipe(gulp.dest(path.public.main))
-		.pipe(helper.success(name));
+		.pipe(helper.success(task.displayName));
 };
 
 task.displayName = 'common';

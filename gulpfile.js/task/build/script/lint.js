@@ -8,11 +8,7 @@ var path = require('../../../path');
 
 // Define task.
 var task = function() {
-
-	helper.watch(
-		[path.source.script + '**/*.js', '!' + path.source.script + 'vendor/**'],
-		gulp.task('scripts:lint')
-	);
+	helper.watch([path.source.script + '**/*.js', '!' + path.source.script + 'vendor/**'], task);
 
 	return gulp.src([path.source.script + '**/*.js', '!' + path.source.script + 'vendor/**'])
 		.pipe($.plumber(helper.error))

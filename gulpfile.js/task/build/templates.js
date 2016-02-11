@@ -8,11 +8,7 @@ var path = require('../../path');
 
 // Define task.
 var task = function() {
-
-	helper.watch(
-		path.source.template + '**/*.jade',
-		gulp.task('templates')
-	);
+	helper.watch(path.source.template + '**/*.jade', task);
 
 	return gulp.src(path.source.template + '*.jade')
 		.pipe($.plumber(helper.error))
@@ -23,7 +19,7 @@ var task = function() {
 };
 
 task.displayName = 'templates';
-task.description = 'Compile templates.';
+task.description = 'Compile jade templates.';
 
 // Export task.
 module.exports = task;

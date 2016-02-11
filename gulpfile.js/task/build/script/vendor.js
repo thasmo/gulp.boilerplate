@@ -7,11 +7,7 @@ var path = require('../../../path');
 
 // Define task.
 var task = function() {
-
-	helper.watch(
-		path.source.script + 'vendor/*.js',
-		gulp.task('scripts:vendor')
-	);
+	helper.watch(path.source.script + 'vendor/*.js', task);
 
 	return gulp.src(path.source.script + 'vendor/*.js')
 		.pipe($.plumber(helper.error))
