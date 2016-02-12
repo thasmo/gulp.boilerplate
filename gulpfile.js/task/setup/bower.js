@@ -5,9 +5,14 @@ var helper = require('../../helper');
 var path = require('../../path');
 
 // Define task.
-var task = function() {
+var task = function(callback) {
 	helper.watch(path.setup.bower, task);
-	return bower.commands.install();
+
+	bower.commands.install().on('end', function() {
+		bower.commands.update().on('end', function() {
+			callback();
+		});
+	});
 };
 
 task.displayName = 'setup:bower';
