@@ -13,7 +13,7 @@ var task = function() {
 	return gulp.src(path.source.image + 'common/**/*.{png,jpg,gif,svg}')
 		.pipe($.plumber(helper.error))
 		.pipe($.changed(path.public.image))
-		.pipe($.if($.util.env.optimize, $.imagemin(config.plugin.imagemin)))
+		.pipe($.if(helper.env.optimize, $.imagemin(config.plugin.imagemin)))
 		.pipe(gulp.dest(path.public.image + 'common/'))
 		.pipe($.filter('*.{png,jpg,gif}'))
 		.pipe($.webp())

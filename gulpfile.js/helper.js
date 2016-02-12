@@ -1,12 +1,15 @@
 // helper.js
 
 var gulp = require('gulp');
-var util = require('gulp-util');
 var notify = require('gulp-notify');
 var env = require('minimist')(process.argv.slice(2));
 var logger = require('gulplog');
 
 module.exports = {
+	env: env,
+	logger: logger,
+	notify: notify,
+
 	error: notify.onError({
 		title: '<%= error.plugin %>',
 		message: '<%= error.message %>'
@@ -31,7 +34,7 @@ module.exports = {
 
 		logger.info(
 			'Watching',
-			'\'' + util.colors.cyan(glob) + '\'',
+			'\'' + glob + '\'',
 			'...'
 		);
 	}

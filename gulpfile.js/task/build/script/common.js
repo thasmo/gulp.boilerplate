@@ -15,7 +15,7 @@ var task = function() {
 		.pipe($.sourcemaps.init())
 			.pipe($.include())
 			.pipe($.jsvalidate())
-			.pipe($.if($.util.env.optimize, $.uglify()))
+			.pipe($.if(helper.env.optimize, $.uglify()))
 		.pipe($.sourcemaps.write('.', config.plugin.sourcemaps.write))
 		.pipe(gulp.dest(path.public.script))
 		.pipe(helper.success(task.displayName));

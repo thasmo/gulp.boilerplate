@@ -12,7 +12,7 @@ var task = function() {
 	return gulp.src(path.source.script + 'vendor/*.js')
 		.pipe($.plumber(helper.error))
 		.pipe($.include())
-		.pipe($.if($.util.env.optimize, $.uglify()))
+		.pipe($.if(helper.env.optimize, $.uglify()))
 		.pipe(gulp.dest(path.public.script + 'vendor/'))
 		.pipe(helper.success(task.displayName));
 };

@@ -12,7 +12,7 @@ var task = function() {
 
 	return gulp.src(path.source.image + 'icon/**/*.svg')
 		.pipe($.plumber(helper.error))
-		.pipe($.if($.util.env.optimize, $.imagemin(config.plugin.imagemin)))
+		.pipe($.if(helper.env.optimize, $.imagemin(config.plugin.imagemin)))
 		.pipe($.svgstore())
 		.pipe(gulp.dest(path.public.image))
 		.pipe(helper.success(task.displayName));
