@@ -63,7 +63,8 @@ module.exports = {
 				baseDir: path.public.main
 			},
 			reloadDebounce: 250,
-			online: true
+			online: true,
+			logFileChanges: false
 		}
 	}
 };
