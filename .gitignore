@@ -1,5 +1,4 @@
 /public/
-!/public/.gitkeep
 
 node_modules/
 bower_components/
