@@ -37,6 +37,7 @@
     "undertaker-forward-reference": "~1.0",
     "minimist": "~1.2",
     "flat": "~2.0",
+    "chalk": "~1.1",
     "del": "~2.2",
     "browser-sync": "~2.11",
     "require-dir": "~0.3",

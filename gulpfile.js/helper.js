@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var notify = require('gulp-notify');
 var env = require('minimist')(process.argv.slice(2));
 var logger = require('gulplog');
+var chalk = require('chalk');
 
 module.exports = {
 	env: env,
@@ -33,9 +34,9 @@ module.exports = {
 		gulp.watch(glob, task);
 
 		logger.info(
-			'Watching',
-			'\'' + glob + '\'',
-			'...'
+			'Watching \'%s\' for \'%s\' ...',
+			chalk.cyan(glob),
+			chalk.cyan(task.name || task.displayName)
 		);
 	},
 
