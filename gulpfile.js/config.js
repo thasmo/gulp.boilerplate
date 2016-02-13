@@ -52,6 +52,14 @@ module.exports = {
 			formats: ['woff', 'woff2']
 		},
 
+		modernizr: {
+			'classPrefix': 'has-',
+			'options': [
+				'setClasses'
+			],
+			'feature-detects': []
+		},
+
 		sourcemaps: {
 			write: {
 				sourceRoot: null

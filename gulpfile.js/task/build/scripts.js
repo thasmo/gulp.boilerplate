@@ -1,9 +1,11 @@
 // scripts.js
 
 var gulp = require('gulp');
+var include = require('require-dir');
+var helper = require('../../helper');
 
 // Define task.
-var task = gulp.parallel('scripts:lint', 'scripts:common', 'scripts:vendor');
+var task = gulp.parallel(helper.values(include('script/')));
 task.displayName = 'scripts';
 task.description = 'Run script-related tasks.';
 

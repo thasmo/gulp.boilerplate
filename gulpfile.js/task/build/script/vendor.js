@@ -1,19 +1,22 @@
-// scripts.js
+// vendor.js
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var helper = require('../../../helper');
 var path = require('../../../path');
+var config = require('../../../config');
 
 // Define task.
 var task = function() {
-	helper.watch(path.source.script + 'vendor/*.js', task);
+	helper.watch(path.source.script + 'vendor.js', task);
 
-	return gulp.src(path.source.script + 'vendor/*.js')
+	return gulp.src(path.source.script + 'vendor.js')
 		.pipe($.plumber(helper.error))
 		.pipe($.include())
+		.pipe($.thasmo.modernizr(config.plugin.modernizr))
+		.pipe($.concat('vendor.js'))
 		.pipe($.if(helper.env.optimize, $.uglify()))
-		.pipe(gulp.dest(path.public.script + 'vendor/'))
+		.pipe(gulp.dest(path.public.script))
 		.pipe(helper.success(task.displayName));
 };
 
