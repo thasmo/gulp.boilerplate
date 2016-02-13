@@ -87,4 +87,4 @@ Run the `default` task by executing `gulp`. Run specific tasks by executing `gul
 ## License
 [MIT License][license]
 
-[license]: http://opensource.org/licenses/MIT
+[license]: http://thasmo.mit-license.org/
