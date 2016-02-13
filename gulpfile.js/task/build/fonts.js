@@ -8,7 +8,7 @@ var path = require('../../path');
 
 // Define task.
 var task = function() {
-	gulp.watch(path.source.font + '**/*.svg', task);
+	helper.watch(path.source.font + '**/*.svg', task);
 
 	return gulp.src(path.source.font + '**/*.svg')
 		.pipe($.plumber(helper.error))
