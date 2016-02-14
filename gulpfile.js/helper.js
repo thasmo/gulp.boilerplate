@@ -2,12 +2,18 @@
 
 var gulp = require('gulp');
 var notify = require('gulp-notify');
-var env = require('minimist')(process.argv.slice(2));
+var cli = require('commander');
 var logger = require('gulplog');
 var chalk = require('chalk');
 
+// Set up CLI options.
+cli
+	.option('-w, --watch', 'Watch files for changes and re-run tasks automatically.')
+	.option('-o, --optimize', 'Optimize file-sizes by compressing/minifying output.')
+	.parse(process.argv);
+
 module.exports = {
-	env: env,
+	cli: cli,
 	logger: logger,
 	notify: notify,
 
@@ -27,7 +33,7 @@ module.exports = {
 	},
 
 	watch: function(glob, task) {
-		if(!env.watch && !env.w || gulp.lastRun(task)) {
+		if(!cli.watch || gulp.lastRun(task)) {
 			return;
 		}
 

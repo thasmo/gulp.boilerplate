@@ -13,7 +13,7 @@ var task = function() {
 	return gulp.src(path.source.template + '*.jade')
 		.pipe($.plumber(helper.error))
 		.pipe($.jade(config.plugin.jade))
-		.pipe($.if(helper.env.optimize, $.htmlmin(config.plugin.htmlmin)))
+		.pipe($.if(helper.cli.optimize, $.htmlmin(config.plugin.htmlmin)))
 		.pipe(gulp.dest(path.public.template))
 		.pipe(helper.success(task.displayName));
 };

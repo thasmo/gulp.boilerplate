@@ -11,7 +11,7 @@ var helper = require('../helper');
 var task = function(callback) {
 	server(config.plugin.server, function() {
 
-		if(helper.env.watch || helper.env.w) {
+		if(helper.cli.watch) {
 			gulp.watch(path.public.main + '**').on('change', function(path) {
 				if(!path.match(config.task.watch.exclude)) {
 					server.reload(path);

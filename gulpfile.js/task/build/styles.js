@@ -16,7 +16,7 @@ var task = function() {
 			.pipe($.include())
 			.pipe($.sass())
 			.pipe($.autoprefixer())
-			.pipe($.if(helper.env.optimize, $.cssnano()))
+			.pipe($.if(helper.cli.optimize, $.cssnano()))
 		.pipe($.sourcemaps.write('.', config.plugin.sourcemaps.write))
 		.pipe(gulp.dest(path.public.style))
 		.pipe(helper.success(task.displayName));

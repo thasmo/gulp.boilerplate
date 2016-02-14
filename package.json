@@ -37,7 +37,7 @@
     "gulp-concat": "~2.6",
     "@thasmo/gulp-modernizr": "~0.1",
     "undertaker-forward-reference": "~1.0",
-    "minimist": "~1.2",
+    "commander": "~2.9",
     "flat": "~2.0",
     "chalk": "~1.1",
     "del": "~2.2",

@@ -15,7 +15,7 @@ var task = function() {
 		.pipe($.include())
 		.pipe($.thasmo.modernizr(config.plugin.modernizr))
 		.pipe($.concat('vendor.js'))
-		.pipe($.if(helper.env.optimize, $.uglify()))
+		.pipe($.if(helper.cli.optimize, $.uglify()))
 		.pipe(gulp.dest(path.public.script))
 		.pipe(helper.success(task.displayName));
 };
