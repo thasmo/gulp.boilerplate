@@ -1,7 +1,6 @@
 // serve.js
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
 var server = require('browser-sync');
 var config = require('../config');
 var path = require('../path');
