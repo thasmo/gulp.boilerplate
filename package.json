@@ -17,6 +17,7 @@
     "gulp-load-plugins": "~1.2",
     "gulp-include": "~2.1",
     "gulp-sass": "~2.2",
+    "gulp-sass-lint": "~1.1",
     "gulp-imagemin": "~2.4",
     "gulp-webp": "~2.3",
     "gulp-changed": "~1.3",

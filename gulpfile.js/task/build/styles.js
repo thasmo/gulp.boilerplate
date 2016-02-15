@@ -1,29 +1,13 @@
 // styles.js
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var config = require('../../config');
+var include = require('require-dir');
 var helper = require('../../helper');
-var path = require('../../path');
 
 // Define task.
-var task = function() {
-	helper.watch(path.source.style + '**/*.scss', task);
-
-	return gulp.src(path.source.style + '*.scss')
-		.pipe($.plumber(helper.error))
-		.pipe($.sourcemaps.init())
-			.pipe($.include())
-			.pipe($.sass())
-			.pipe($.autoprefixer())
-			.pipe($.if(helper.cli.optimize, $.cssnano()))
-		.pipe($.sourcemaps.write('.', config.plugin.sourcemaps.write))
-		.pipe(gulp.dest(path.public.style))
-		.pipe(helper.success(task.displayName));
-};
-
+var task = gulp.parallel(helper.values(include('style/')));
 task.displayName = 'styles';
-task.description = 'Compile styles.';
+task.description = 'Run style-related tasks.';
 
 // Export task.
 module.exports = task;
