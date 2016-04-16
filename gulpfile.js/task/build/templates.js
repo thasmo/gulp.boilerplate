@@ -17,6 +17,8 @@ var task = function() {
 			return include('../../../source/data/');
 		}))
 		.pipe($.jade(config.plugin.jade))
+		.pipe($.htmlhint('.htmlhintrc'))
+		.pipe($.htmlhint.reporter())
 		.pipe($.if(helper.cli.optimize, $.htmlmin(config.plugin.htmlmin)))
 		.pipe(gulp.dest(path.public.template))
 		.pipe(helper.success(task.displayName));
