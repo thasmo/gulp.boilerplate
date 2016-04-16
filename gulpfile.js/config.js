@@ -34,6 +34,10 @@ module.exports = {
 			progressive: true
 		},
 
+		webp: {
+			quality: 80
+		},
+
 		gifsicle: {},
 
 		svgo: {

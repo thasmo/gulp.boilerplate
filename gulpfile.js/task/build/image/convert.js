@@ -13,7 +13,7 @@ var task = function() {
 	return gulp.src(path.source.image + 'common/**/*.{png,jpg,gif}')
 		.pipe($.plumber(helper.error))
 		.pipe($.changed(path.public.image))
-		.pipe($.webp())
+		.pipe($.webp(config.task.webp))
 		.pipe(gulp.dest(path.public.image + 'common/'))
 		.pipe(helper.success(task.displayName));
 };
