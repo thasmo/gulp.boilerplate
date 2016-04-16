@@ -1,8 +1,11 @@
+# Build
 /public/
 
-node_modules/
-bower_components/
+# Development
+/node_modules/
+/bower_components/
 
+# Common
 .tmp/
 *.log
 *.zip
