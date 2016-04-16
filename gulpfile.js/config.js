@@ -24,11 +24,20 @@ module.exports = {
 			collapseWhitespace: true
 		},
 
-		imagemin: {
-			optimizationLevel: 7,
-			progressive: true,
-			interlaced: true,
-			svgoPlugins: [
+		pngquant: {
+			quality: '50-80',
+			speed: 1
+		},
+
+		mozjpeg: {
+			quality: 80,
+			progressive: true
+		},
+
+		gifsicle: {},
+
+		svgo: {
+			plugins: [
 				{removeDoctype: false},
 				{removeXMLProcInst: false}
 			]

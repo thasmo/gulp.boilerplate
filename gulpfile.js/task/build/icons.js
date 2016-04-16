@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var svgo = require('imagemin-svgo');
 var config = require('../../config');
 var helper = require('../../helper');
 var path = require('../../path');
@@ -12,7 +13,7 @@ var task = function() {
 
 	return gulp.src(path.source.image + 'icon/**/*.svg')
 		.pipe($.plumber(helper.error))
-		.pipe($.if(helper.cli.optimize, $.imagemin(config.plugin.imagemin)))
+		.pipe($.if(helper.cli.optimize, svgo(config.plugin.svgo)()))
 		.pipe($.svgstore())
 		.pipe(gulp.dest(path.public.image))
 		.pipe(helper.success(task.displayName));

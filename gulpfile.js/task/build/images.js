@@ -1,28 +1,13 @@
 // images.js
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var config = require('../../config');
+var include = require('require-dir');
 var helper = require('../../helper');
-var path = require('../../path');
 
 // Define task.
-var task = function() {
-	helper.watch(path.source.image + 'common/**/*.{png,jpg,gif,svg}', task);
-
-	return gulp.src(path.source.image + 'common/**/*.{png,jpg,gif,svg}')
-		.pipe($.plumber(helper.error))
-		.pipe($.changed(path.public.image))
-		.pipe($.if(helper.cli.optimize, $.imagemin(config.plugin.imagemin)))
-		.pipe(gulp.dest(path.public.image + 'common/'))
-		.pipe($.filter('*.{png,jpg,gif}'))
-		.pipe($.webp())
-		.pipe(gulp.dest(path.public.image + 'common/'))
-		.pipe(helper.success(task.displayName));
-};
-
+var task = gulp.parallel(helper.values(include('image/')));
 task.displayName = 'images';
-task.description = 'Process images.';
+task.description = 'Run image-related tasks.';
 
 // Export task.
 module.exports = task;
