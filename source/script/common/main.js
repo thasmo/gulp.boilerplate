@@ -1,7 +1,7 @@
 // main.js
-'use strict';
-
 (function ($, window) {
+	'use strict';
+
 	$(function () {
 		window.svg4everybody();
 		window.console.info('Booted.');
