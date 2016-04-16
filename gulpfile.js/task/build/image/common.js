@@ -12,16 +12,16 @@ var path = require('../../../path');
 
 // Define task.
 var task = function() {
-	helper.watch(path.source.image + 'common/**/*.{png,jpg,gif,svg}', task);
+	helper.watch(path.source.image + '**/*.{png,jpg,gif,svg}', task);
 
-	return gulp.src(path.source.image + 'common/**/*.{png,jpg,gif,svg}')
+	return gulp.src(path.source.image + '**/*.{png,jpg,gif,svg}')
 		.pipe($.plumber(helper.error))
 		.pipe($.changed(path.public.image))
 		.pipe($.if(helper.cli.optimize, pngquant(config.plugin.pngquant)()))
 		.pipe($.if(helper.cli.optimize, mozjpeg(config.plugin.mozjpeg)()))
 		.pipe($.if(helper.cli.optimize, gifsicle(config.plugin.gifsicle)()))
 		.pipe($.if(helper.cli.optimize, svgo(config.plugin.svgo)()))
-		.pipe(gulp.dest(path.public.image + 'common/'))
+		.pipe(gulp.dest(path.public.image))
 		.pipe(helper.success(task.displayName));
 };
 
