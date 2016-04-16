@@ -36,6 +36,7 @@
     "gulp-xo": "~0.8",
     "gulp-zip": "~3.1",
     "gulp-concat": "~2.6",
+    "gulp-data": "~1.2",
     "@thasmo/gulp-modernizr": "~0.1",
     "undertaker-forward-reference": "~1.0",
     "commander": "~2.9",
