@@ -6,20 +6,27 @@
 - Add packaging task.
 - Add reset task to the build queue.
 - Log file-watching to the console.
+- Add data-sources for use in templates.
+- Add source-map generation for vendor scripts.
 
 ### Changed
+- Update to Gulp 4.
 - Update sanitize.css.
+- Update jQuery.
 - Restructure task files.
 - Use native bower object in the setup task.
 - Use gulp-svgstore instead of gulp-svg-sprite.
-- Update Modernizr to version 3.2.
+- Refactor Modernizr integration to support custom builds.
 - Make watching files more robust.
+- Refactor and enhance image-optimization task.
+- Enhance CLI argument usage.
 
 ### Removed
-- Remove SVG to PNG generation.
+- Remove SVG to PNG conversion.
 - Remove favicon generation.
 - Remove coffeescript support.
 - Remove the gulp-duration plugin.
+- Remove html5shiv support.
 
 ## [0.2.1] - 2015-10-14
 
