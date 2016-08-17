@@ -1,13 +1,13 @@
 // main.scss
 
 // Libraries
-@import '../../bower_components/bourbon/app/assets/stylesheets/bourbon.scss';
+@import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 
 // Base
 // = include ../../bower_components/sanitize-css/sanitize.css
 
 // Components
-@import '.tmp/font.scss';
+@import '.tmp/font';
 
 // Helpers
-@import 'common/helper.scss';
+@import 'common/helper';
