@@ -8,13 +8,13 @@ var path = require('../../../path');
 
 // Define task.
 var task = function() {
-	helper.watch(path.source.image + 'common/**/*.{png,jpg,gif}', task);
+	helper.watch(path.source.image + '**/*.{png,jpg,gif}', task);
 
-	return gulp.src(path.source.image + 'common/**/*.{png,jpg,gif}')
+	return gulp.src(path.source.image + '**/*.{png,jpg,gif}')
 		.pipe($.plumber(helper.error))
 		.pipe($.changed(path.public.image))
-		.pipe($.webp(config.task.webp))
-		.pipe(gulp.dest(path.public.image + 'common/'))
+		.pipe($.webp(config.plugin.webp))
+		.pipe(gulp.dest(path.public.image))
 		.pipe(helper.success(task.displayName));
 };
 

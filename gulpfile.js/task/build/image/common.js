@@ -17,10 +17,12 @@ var task = function() {
 	return gulp.src(path.source.image + '**/*.{png,jpg,gif,svg}')
 		.pipe($.plumber(helper.error))
 		.pipe($.changed(path.public.image))
-		.pipe($.if(helper.cli.optimize, pngquant(config.plugin.pngquant)()))
-		.pipe($.if(helper.cli.optimize, mozjpeg(config.plugin.mozjpeg)()))
-		.pipe($.if(helper.cli.optimize, gifsicle(config.plugin.gifsicle)()))
-		.pipe($.if(helper.cli.optimize, svgo(config.plugin.svgo)()))
+		.pipe($.if(helper.cli.optimize, $.imagemin([
+			pngquant(config.plugin.pngquant),
+			mozjpeg(config.plugin.mozjpeg),
+			gifsicle(config.plugin.gifsicle),
+			svgo(config.plugin.svgo)
+		])))
 		.pipe(gulp.dest(path.public.image))
 		.pipe(helper.success(task.displayName));
 };
