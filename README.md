@@ -1,5 +1,5 @@
 # Gulp Boilerplate
-> Personal gulp boilerplate for basic frontend web projects.
+> Personal Gulp boilerplate for basic frontend web projects.
 
 ## Project Features
 - jQuery
@@ -10,11 +10,10 @@
 
 ## Build-Task Features
 - Sass Suport
-- Jade Support
+- Pug Support
 - Image Optimization
 - SVG-Sprite Generation
 - WebP Generation
-- Icon-Font Generation
 - Bourbon Integration
 - Browser-Sync Integration
 - Auto-Prefixer Integration
@@ -23,7 +22,8 @@
 - Notification Support
 
 ## Requirements
-- node.js
+- node
+- npm
 - Python 2.7
 
 ## Browser Compatibility
@@ -76,10 +76,13 @@ Run the `default` task by executing `gulp`. Run specific tasks by executing `gul
 ### Flags
 
 - **watch**  
-  Use the `--watch` flag on any task to enable file-watching and automatic re-run on changes.
+  Use the `-w` or `--watch` flag on any task to enable file-watching and automatic re-run on changes.
 
 - **optimize**  
-  Use the `--optimize` flag on any task to enable optimizations for production output e.g. minification etc.
+  Use the `-o` or `--optimize` flag on any task to enable optimizations for production output e.g. minification etc.
+
+- **force**  
+  Use the `-f` or `--force` flag on any task to force it running without using caches.
 
 ## License
 [MIT License][license]

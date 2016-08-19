@@ -8,9 +8,16 @@ var path = require('../../path');
 var task = function(callback) {
 	helper.watch(path.setup.bower, task);
 
-	bower.commands.install().on('end', function() {
-		bower.commands.update().on('end', function() {
-			callback();
+	var options = {
+		production: !!helper.cli.production,
+		force: !!helper.cli.force
+	};
+
+	bower.commands.prune().on('end', function() {
+		bower.commands.install(null, null, options).on('end', function() {
+			bower.commands.update(null, null, options).on('end', function() {
+				callback();
+			});
 		});
 	});
 };
