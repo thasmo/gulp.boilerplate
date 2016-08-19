@@ -27,6 +27,7 @@
 - Remove coffeescript support.
 - Remove the gulp-duration plugin.
 - Remove html5shiv support.
+- Remove icon-font generation.
 
 ## [0.2.1] - 2015-10-14
 
