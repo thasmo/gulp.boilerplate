@@ -51,11 +51,6 @@ module.exports = {
 			quiet: true
 		},
 
-		iconfont: {
-			fontName: 'icons',
-			formats: ['woff', 'woff2']
-		},
-
 		modernizr: {
 			'classPrefix': 'has-',
 			'options': [
