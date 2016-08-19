@@ -67,9 +67,6 @@ Run the `default` task by executing `gulp`. Run specific tasks by executing `gul
 - **icons**  
   Reads SVG files from the icons directory and generates a sprite including a `scss` file.
 
-- **fonts**  
-  Reads SVG files from the icons directory and generates an icon-font.
-  
 - **package**  
   Creates a ZIP file from files in the public directory.
 
