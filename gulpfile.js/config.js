@@ -13,7 +13,8 @@ module.exports = {
 	},
 
 	plugin: {
-		jade: {
+		pug: {
+			basedir: path.source.template,
 			pretty: '\t'
 		},
 

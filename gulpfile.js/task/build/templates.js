@@ -9,14 +9,14 @@ var path = require('../../path');
 
 // Define task.
 var task = function() {
-	helper.watch(path.source.template + '**/*.jade', task);
+	helper.watch(path.source.template + '**/*.pug', task);
 
-	return gulp.src(path.source.template + '*.jade')
+	return gulp.src(path.source.template + '*.pug')
 		.pipe($.plumber(helper.error))
 		.pipe($.data(function() {
 			return include('../../../source/data/');
 		}))
-		.pipe($.jade(config.plugin.jade))
+		.pipe($.pug(config.plugin.pug))
 		.pipe($.htmlhint('.htmlhintrc'))
 		.pipe($.htmlhint.reporter())
 		.pipe($.if(helper.cli.optimize, $.htmlmin(config.plugin.htmlmin)))
@@ -25,7 +25,7 @@ var task = function() {
 };
 
 task.displayName = 'templates';
-task.description = 'Compile jade templates.';
+task.description = 'Compile pug templates.';
 
 // Export task.
 module.exports = task;
