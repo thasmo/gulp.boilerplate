@@ -47,7 +47,6 @@
     "del": "~2.2",
     "browser-sync": "~2.14",
     "require-dir": "~0.3",
-    "run-sequence": "~1.2",
     "bower": "~1.7"
   },
   "scripts": {
