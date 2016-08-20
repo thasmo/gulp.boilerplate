@@ -1,6 +1,11 @@
 # Gulp Boilerplate
 > Personal Gulp boilerplate for basic frontend web projects.
 
+[![GitHub Release](https://img.shields.io/github/release/thasmo/gulp.boilerplate.svg)](https://github.com/thasmo/gulp.boilerplate/releases/latest)
+[![License](https://img.shields.io/github/license/thasmo/gulp.boilerplate.svg)](https://github.com/thasmo/gulp.boilerplate/blob/develop/LICENSE.md)
+
+---
+
 ## Project Features
 - jQuery
 - Modernizr
@@ -35,10 +40,10 @@
 Run the `default` task by executing `gulp`. Run specific tasks by executing `gulp <task>`.
 
 - **default**  
-  Runs the `build` and `serve` tasks and watches file changes by default.
+  Runs the `reset`, `setup`, `build` and `serve` tasks.
 
 - **build**  
-  Runs the `reset` and `setup` tasks followed by the `common`, `templates`, `styles`, `scripts`, `images`, `icons` and `fonts` tasks.
+  Runs the `common`, `templates`, `styles`, `scripts`, `images` and `icons` tasks.
 
 - **serve**  
   Starts `browser-sync` which is serving files from the public directory.
@@ -70,9 +75,6 @@ Run the `default` task by executing `gulp`. Run specific tasks by executing `gul
 - **package**  
   Creates a ZIP file from files in the public directory.
 
-- **optimize**  
-  Creates critical CSS and injects it into the templates.
-
 ### Flags
 
 - **watch**  
@@ -84,7 +86,9 @@ Run the `default` task by executing `gulp`. Run specific tasks by executing `gul
 - **force**  
   Use the `-f` or `--force` flag on any task to force it running without using caches.
 
-## License
-[MIT License][license]
+- **production**  
+  Use the `-f` or `--force` flag on any task to skip tasks which are irrelevant on production environments.
 
-[license]: http://thasmo.mit-license.org/
+---
+
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
