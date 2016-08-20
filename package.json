@@ -50,6 +50,6 @@
     "bower": "~1.7"
   },
   "scripts": {
-    "postinstall": "gulp build -f"
+    "postinstall": "gulp setup -f"
   }
 }

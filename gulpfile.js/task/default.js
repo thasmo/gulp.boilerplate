@@ -1,12 +1,12 @@
 // default.js
 
 var gulp = require('gulp');
-var util = require('gulp-util');
+var helper = require('../helper');
 
 // Define task.
-var task = gulp.series('build', 'serve');
+var task = gulp.series('reset', 'setup', 'build', 'serve');
 task.displayName = 'default';
-task.description = 'Run the build and serve tasks.';
+task.description = 'Run the build task.';
 
 // Export task.
 module.exports = task;
