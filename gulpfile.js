@@ -9,7 +9,7 @@ var forward = require('undertaker-forward-reference');
 gulp.registry(forward());
 
 // Load tasks.
-var tasks = flatten(include('task/', {
+var tasks = flatten(include('task/task/', {
 	recurse: true,
 	duplicates: true
 }));

@@ -1,7 +1,6 @@
 // default.js
 
 var gulp = require('gulp');
-var helper = require('../helper');
 
 // Define task.
 var task = gulp.series('reset', 'setup', 'build', 'serve');
