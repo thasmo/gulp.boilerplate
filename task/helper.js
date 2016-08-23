@@ -46,7 +46,9 @@ module.exports = {
 				}
 			}
 
-			gulp.task(name, require(path));
+			var task = require(path);
+			task.displayName = name;
+			gulp.task(name, task);
 		});
 
 		return tasks;
