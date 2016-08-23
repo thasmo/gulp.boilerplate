@@ -22,7 +22,6 @@ var task = function() {
 		.pipe(helper.success(task.displayName));
 };
 
-task.displayName = 'scripts:vendor';
 task.description = 'Process vendor scripts.';
 
 // Export task.

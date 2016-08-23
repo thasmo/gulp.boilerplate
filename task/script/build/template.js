@@ -1,4 +1,4 @@
-// templates.js
+// template.js
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
@@ -24,7 +24,6 @@ var task = function() {
 		.pipe(helper.success(task.displayName));
 };
 
-task.displayName = 'templates';
 task.description = 'Compile pug templates.';
 
 // Export task.

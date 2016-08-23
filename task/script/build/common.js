@@ -15,7 +15,6 @@ var task = function() {
 		.pipe(helper.success(task.displayName));
 };
 
-task.displayName = 'common';
 task.description = 'Process common files.';
 
 // Export task.

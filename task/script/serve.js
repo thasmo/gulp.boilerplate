@@ -22,7 +22,6 @@ var task = function(callback) {
 	});
 };
 
-task.displayName = 'serve';
 task.description = 'Launch a local web-server for development.';
 
 // Export task.

@@ -1,4 +1,4 @@
-// icons.js
+// icon.js
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
@@ -19,7 +19,6 @@ var task = function() {
 		.pipe(helper.success(task.displayName));
 };
 
-task.displayName = 'icons';
 task.description = 'Generate an icon-sprite.';
 
 // Export task.

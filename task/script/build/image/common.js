@@ -27,7 +27,6 @@ var task = function() {
 		.pipe(helper.success(task.displayName));
 };
 
-task.displayName = 'images:common';
 task.description = 'Process images.';
 
 // Export task.

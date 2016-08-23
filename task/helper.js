@@ -5,6 +5,7 @@ var notify = require('gulp-notify');
 var cli = require('commander');
 var logger = require('gulplog');
 var chalk = require('chalk');
+var exists = require('file-exists');
 
 // Set up CLI options.
 cli
@@ -19,12 +20,44 @@ module.exports = {
 	logger: logger,
 	notify: notify,
 
+	register: function (tasks) {
+		var root = './script/';
+
+		// Determine tasks to run.
+		tasks = tasks || cli.args;
+		tasks = (tasks.length) ? tasks : ['default'];
+
+		// Process tasks.
+		tasks.forEach(function (name) {
+			var parts = name.split(':');
+			var path = '';
+
+			if (parts.length == 1) {
+				path = root + parts[0] + '.js';
+
+				if (!exists(path, {root: __dirname})) {
+					path = root + 'build/' + parts[0] + '.js';
+				}
+			} else {
+				path = root + parts[0] + '/' + parts[1] + '.js';
+
+				if (!exists(path, {root: __dirname})) {
+					path = root + 'build/' + parts[0] + '/' + parts[1] + '.js';
+				}
+			}
+
+			gulp.task(name, require(path));
+		});
+
+		return tasks;
+	},
+
 	error: notify.onError({
 		title: '<%= error.plugin %>',
 		message: '<%= error.message %>'
 	}),
 
-	success: function(task, message) {
+	success: function (task, message) {
 		notify.logLevel(1);
 
 		return notify({
@@ -34,8 +67,8 @@ module.exports = {
 		});
 	},
 
-	watch: function(glob, task) {
-		if(!cli.watch || gulp.lastRun(task)) {
+	watch: function (glob, task) {
+		if (!cli.watch || gulp.lastRun(task)) {
 			return;
 		}
 
@@ -49,7 +82,7 @@ module.exports = {
 	},
 
 	values: function values(object) {
-		return Object.keys(object).map(function(key) {
+		return Object.keys(object).map(function (key) {
 			return object[key];
 		});
 	}

@@ -1,4 +1,4 @@
-// scripts.js
+// lint.js
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
@@ -16,7 +16,6 @@ var task = function() {
 		.pipe(helper.success(task.displayName));
 };
 
-task.displayName = 'scripts:lint';
 task.description = 'Lint common scripts.';
 
 // Export task.

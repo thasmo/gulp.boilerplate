@@ -22,7 +22,6 @@ var task = function(callback) {
 	});
 };
 
-task.displayName = 'setup:bower';
 task.description = 'Install Bower dependencies.';
 
 // Export task.
