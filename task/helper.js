@@ -82,11 +82,5 @@ module.exports = {
 			chalk.cyan(glob),
 			chalk.cyan(task.name || task.displayName)
 		);
-	},
-
-	values: function values(object) {
-		return Object.keys(object).map(function (key) {
-			return object[key];
-		});
 	}
 };
