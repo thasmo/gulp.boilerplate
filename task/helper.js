@@ -49,9 +49,11 @@ module.exports = {
 				}
 			}
 
-			var task = require(path);
-			task.displayName = name;
-			gulp.task(name, task);
+			if (exists(path, {root: __dirname})) {
+				var task = require(path);
+				task.displayName = name;
+				gulp.task(name, task);
+			}
 		});
 
 		return tasks;
