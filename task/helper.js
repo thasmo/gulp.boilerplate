@@ -15,6 +15,9 @@ cli
 	.option('-f, --force', 'Clean up everything before running tasks and disable all caches.')
 	.parse(process.argv);
 
+// Set notify log level.
+notify.logLevel(1);
+
 module.exports = {
 	cli: cli,
 	logger: logger,
@@ -60,8 +63,6 @@ module.exports = {
 	}),
 
 	success: function (task, message) {
-		notify.logLevel(1);
-
 		return notify({
 			title: task,
 			message: message || 'Task finished.',
