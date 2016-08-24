@@ -1,7 +1,7 @@
 // build.js
 
 var gulp = require('gulp');
-var helper = require('../helper');
+var helper = require('../helper.js');
 
 // Register task.
 var task = gulp.parallel(helper.register([

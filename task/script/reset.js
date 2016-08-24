@@ -1,7 +1,7 @@
 // reset.js
 
 var del = require('del');
-var path = require('../path');
+var path = require('../path.js');
 
 // Define task.
 var task = function() {

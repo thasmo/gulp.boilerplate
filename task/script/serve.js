@@ -2,9 +2,9 @@
 
 var gulp = require('gulp');
 var server = require('browser-sync');
-var config = require('../config');
-var path = require('../path');
-var helper = require('../helper');
+var config = require('../config.js');
+var path = require('../path.js');
+var helper = require('../helper.js');
 
 // Define task.
 var task = function(callback) {

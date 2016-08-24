@@ -1,11 +1,16 @@
 // icon.js
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
 var svgo = require('imagemin-svgo');
-var config = require('../../config');
-var helper = require('../../helper');
-var path = require('../../path');
+var config = require('../../config.js');
+var helper = require('../../helper.js');
+var path = require('../../path.js');
+var $ = {
+	plumber: require('gulp-plumber'),
+	if: require('gulp-if'),
+	imagemin: require('gulp-imagemin'),
+	svgstore: require('gulp-svgstore')
+};
 
 // Define task.
 var task = function() {

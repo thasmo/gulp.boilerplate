@@ -14,7 +14,6 @@
     "gulplog": "~1.0",
     "gulp-plumber": "~1.1",
     "gulp-svgstore": "~6.0",
-    "gulp-load-plugins": "~1.2",
     "gulp-include": "~2.3",
     "gulp-sass": "~2.3",
     "gulp-sass-lint": "~1.2",

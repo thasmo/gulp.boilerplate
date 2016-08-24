@@ -1,8 +1,8 @@
 // bower.js
 
 var bower = require('bower');
-var helper = require('../../helper');
-var path = require('../../path');
+var helper = require('../../helper.js');
+var path = require('../../path.js');
 
 // Define task.
 var task = function(callback) {

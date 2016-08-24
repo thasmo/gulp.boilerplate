@@ -1,10 +1,12 @@
 // lint.js
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var config = require('../../../config');
-var helper = require('../../../helper');
-var path = require('../../../path');
+var helper = require('../../../helper.js');
+var path = require('../../../path.js');
+var $ = {
+	plumber: require('gulp-plumber'),
+	sasslint: require('gulp-sass-lint')
+};
 
 // Define task.
 var task = function() {
@@ -12,8 +14,8 @@ var task = function() {
 
 	return gulp.src(path.source.style + '**/*.scss')
 		.pipe($.plumber(helper.error))
-		.pipe($.sassLint())
-		.pipe($.sassLint.format())
+		.pipe($.sasslint())
+		.pipe($.sasslint.format())
 		.pipe(helper.success(task.displayName));
 };
 

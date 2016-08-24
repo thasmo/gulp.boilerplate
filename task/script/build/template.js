@@ -1,11 +1,18 @@
 // template.js
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
 var include = require('require-dir');
-var config = require('../../config');
-var helper = require('../../helper');
-var path = require('../../path');
+var config = require('../../config.js');
+var helper = require('../../helper.js');
+var path = require('../../path.js');
+var $ = {
+	plumber: require('gulp-plumber'),
+	if: require('gulp-if'),
+	data: require('gulp-data'),
+	pug: require('gulp-pug'),
+	htmlhint: require('gulp-htmlhint'),
+	htmlmin: require('gulp-htmlmin')
+};
 
 // Define task.
 var task = function() {

@@ -1,7 +1,7 @@
 // image.js
 
 var gulp = require('gulp');
-var helper = require('../../helper');
+var helper = require('../../helper.js');
 
 // Define task.
 var task = gulp.parallel(helper.register(['image:common', 'image:convert']));

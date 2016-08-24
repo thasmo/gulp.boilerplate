@@ -1,10 +1,18 @@
 // common.js
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var config = require('../../../config');
-var helper = require('../../../helper');
-var path = require('../../../path');
+var config = require('../../../config.js');
+var helper = require('../../../helper.js');
+var path = require('../../../path.js');
+var $ = {
+	plumber: require('gulp-plumber'),
+	if: require('gulp-if'),
+	include: require('gulp-include'),
+	sourcemaps: require('gulp-sourcemaps'),
+	sass: require('gulp-sass'),
+	autoprefixer: require('gulp-autoprefixer'),
+	cssnano: require('gulp-cssnano')
+};
 
 // Define task.
 var task = function() {

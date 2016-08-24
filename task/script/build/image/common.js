@@ -1,14 +1,19 @@
 // common.js
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
 var pngquant = require('imagemin-pngquant');
 var mozjpeg = require('imagemin-mozjpeg');
 var gifsicle = require('imagemin-gifsicle');
 var svgo = require('imagemin-svgo');
-var config = require('../../../config');
-var helper = require('../../../helper');
-var path = require('../../../path');
+var config = require('../../../config.js');
+var helper = require('../../../helper.js');
+var path = require('../../../path.js');
+var $ = {
+	plumber: require('gulp-plumber'),
+	if: require('gulp-if'),
+	changed: require('gulp-changed'),
+	imagemin: require('gulp-imagemin')
+};
 
 // Define task.
 var task = function() {

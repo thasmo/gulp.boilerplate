@@ -1,10 +1,13 @@
 // package.js
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var config = require('../config');
-var helper = require('../helper');
-var path = require('../path');
+var config = require('../config.js');
+var helper = require('../helper.js');
+var path = require('../path.js');
+var $ = {
+	plumber: require('gulp-plumber'),
+	zip: require('gulp-zip')
+};
 
 // Define task.
 var task = function() {

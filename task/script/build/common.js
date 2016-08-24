@@ -1,9 +1,11 @@
 // common.js
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var helper = require('../../helper');
-var path = require('../../path');
+var helper = require('../../helper.js');
+var path = require('../../path.js');
+var $ = {
+	plumber: require('gulp-plumber')
+};
 
 // Define task.
 var task = function() {
