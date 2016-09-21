@@ -2,7 +2,7 @@
 
 var gulp = require('gulp');
 var config = require('../../../config.js');
-var helper = require('../../../helper.js');
+var utility = require('../../../utility.js');
 var path = require('../../../path.js');
 var $ = {
 	plumber: require('gulp-plumber'),
@@ -16,21 +16,19 @@ var $ = {
 
 // Define task.
 var task = function() {
-	helper.watch(path.source.style + '**/*.scss', task);
-
 	return gulp.src(path.source.style + '*.scss')
-		.pipe($.plumber(helper.error))
+		.pipe($.plumber(utility.error))
 		.pipe($.sourcemaps.init())
 			.pipe($.include())
 			.pipe($.sass())
 			.pipe($.autoprefixer())
-			.pipe($.if(helper.cli.optimize, $.cssnano()))
+			.pipe($.if(utility.cli.optimize, $.cssnano()))
 		.pipe($.sourcemaps.write('.', config.plugin.sourcemaps.write))
-		.pipe(gulp.dest(path.public.style))
-		.pipe(helper.success(task.displayName));
+		.pipe(gulp.dest(path.public.style));
 };
 
 task.description = 'Compile styles.';
+task.watch = path.source.style + '**/*.scss';
 
 // Export task.
 module.exports = task;

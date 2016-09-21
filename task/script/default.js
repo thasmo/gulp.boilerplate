@@ -1,10 +1,10 @@
 // default.js
 
 var gulp = require('gulp');
-var helper = require('../helper.js');
+var utility = require('../utility.js');
 
 // Define task.
-var task = gulp.series(helper.register(['reset', 'setup', 'build', 'serve']));
+var task = gulp.series(utility.register(['reset', 'setup', 'build', 'serve']));
 task.description = 'Run the build task.';
 
 // Export task.

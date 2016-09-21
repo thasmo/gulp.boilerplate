@@ -2,7 +2,7 @@
 
 var gulp = require('gulp');
 var config = require('../../../config.js');
-var helper = require('../../../helper.js');
+var utility = require('../../../utility.js');
 var path = require('../../../path.js');
 var $ = {
 	plumber: require('gulp-plumber'),
@@ -11,15 +11,13 @@ var $ = {
 
 // Define task.
 var task = function() {
-	helper.watch(path.source.script + '**/*.js', task);
-
 	return gulp.src(path.source.script + '**/*.js')
-		.pipe($.plumber(helper.error))
-		.pipe($.xo(config.plugin.xo))
-		.pipe(helper.success(task.displayName));
+		.pipe($.plumber(utility.error))
+		.pipe($.xo(config.plugin.xo));
 };
 
 task.description = 'Lint common scripts.';
+task.watch = path.source.script + '**/*.js';
 
 // Export task.
 module.exports = task;

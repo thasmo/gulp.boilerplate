@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 var svgo = require('imagemin-svgo');
 var config = require('../../config.js');
-var helper = require('../../helper.js');
+var utility = require('../../utility.js');
 var path = require('../../path.js');
 var $ = {
 	plumber: require('gulp-plumber'),
@@ -14,17 +14,15 @@ var $ = {
 
 // Define task.
 var task = function() {
-	helper.watch(path.source.image + 'icon/**/*.svg', task);
-
 	return gulp.src(path.source.image + 'icon/**/*.svg')
-		.pipe($.plumber(helper.error))
-		.pipe($.if(helper.cli.optimize, $.imagemin([svgo(config.plugin.svgo)])))
+		.pipe($.plumber(utility.error))
+		.pipe($.if(utility.cli.optimize, $.imagemin([svgo(config.plugin.svgo)])))
 		.pipe($.svgstore())
-		.pipe(gulp.dest(path.public.image))
-		.pipe(helper.success(task.displayName));
+		.pipe(gulp.dest(path.public.image));
 };
 
 task.description = 'Generate an icon-sprite.';
+task.watch = path.source.image + 'icon/**/*.svg';
 
 // Export task.
 module.exports = task;

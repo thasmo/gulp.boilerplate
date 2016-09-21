@@ -1,10 +1,10 @@
 // image.js
 
 var gulp = require('gulp');
-var helper = require('../../helper.js');
+var utility = require('../../utility.js');
 
 // Define task.
-var task = gulp.parallel(helper.register(['image:common', 'image:convert']));
+var task = gulp.parallel(utility.register(['image:common', 'image:convert']));
 task.description = 'Run image-related tasks.';
 
 // Export task.

@@ -1,10 +1,20 @@
 // style.js
 
 var gulp = require('gulp');
-var helper = require('../../helper.js');
+var utility = require('../../utility.js');
 
 // Define task.
-var task = gulp.parallel(helper.register(['style:common', 'style:lint']));
+var task = (function() {
+	var tasks = ['style:common'];
+
+	// Skip linting on production.
+	if (!utility.cli.production) {
+		tasks.push('style:lint');
+	}
+
+	return gulp.parallel(utility.register(tasks));
+})();
+
 task.description = 'Run style-related tasks.';
 
 // Export task.

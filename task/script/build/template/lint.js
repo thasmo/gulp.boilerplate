@@ -5,19 +5,18 @@ var utility = require('../../../utility.js');
 var path = require('../../../path.js');
 var $ = {
 	plumber: require('gulp-plumber'),
-	sasslint: require('gulp-sass-lint')
+	puglint: require('gulp-pug-lint')
 };
 
 // Define task.
 var task = function() {
-	return gulp.src(path.source.style + '**/*.scss')
+	return gulp.src(path.source.template + '**/*.pug')
 		.pipe($.plumber(utility.error))
-		.pipe($.sasslint())
-		.pipe($.sasslint.format());
+		.pipe($.puglint())
 };
 
-task.description = 'Lint styles.';
-task.watch = path.source.style + '**/*.scss';
+task.description = 'Lint templates.';
+task.watch = path.source.template + '**/*.pug';
 
 // Export task.
 module.exports = task;

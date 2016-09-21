@@ -6,7 +6,7 @@ var mozjpeg = require('imagemin-mozjpeg');
 var gifsicle = require('imagemin-gifsicle');
 var svgo = require('imagemin-svgo');
 var config = require('../../../config.js');
-var helper = require('../../../helper.js');
+var utility = require('../../../utility.js');
 var path = require('../../../path.js');
 var $ = {
 	plumber: require('gulp-plumber'),
@@ -17,22 +17,20 @@ var $ = {
 
 // Define task.
 var task = function() {
-	helper.watch(path.source.image + '**/*.{png,jpg,gif,svg}', task);
-
 	return gulp.src(path.source.image + '**/*.{png,jpg,gif,svg}')
-		.pipe($.plumber(helper.error))
+		.pipe($.plumber(utility.error))
 		.pipe($.changed(path.public.image))
-		.pipe($.if(helper.cli.optimize, $.imagemin([
+		.pipe($.if(utility.cli.optimize, $.imagemin([
 			pngquant(config.plugin.pngquant),
 			mozjpeg(config.plugin.mozjpeg),
 			gifsicle(config.plugin.gifsicle),
 			svgo(config.plugin.svgo)
 		])))
-		.pipe(gulp.dest(path.public.image))
-		.pipe(helper.success(task.displayName));
+		.pipe(gulp.dest(path.public.image));
 };
 
 task.description = 'Process images.';
+task.watch = path.source.image + '**/*.{png,jpg,gif,svg}';
 
 // Export task.
 module.exports = task;

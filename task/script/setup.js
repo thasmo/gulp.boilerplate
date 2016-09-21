@@ -1,10 +1,10 @@
 // setup.js
 
 var gulp = require('gulp');
-var helper = require('../helper.js');
+var utility = require('../utility.js');
 
 // Define task.
-var task = gulp.parallel(helper.register(['setup:bower']));
+var task = gulp.parallel(utility.register(['setup:bower']));
 task.description = 'Install dependencies.';
 
 // Export task.

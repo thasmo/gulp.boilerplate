@@ -2,7 +2,7 @@
 
 var gulp = require('gulp');
 var config = require('../config.js');
-var helper = require('../helper.js');
+var utility = require('../utility.js');
 var path = require('../path.js');
 var $ = {
 	plumber: require('gulp-plumber'),
@@ -12,10 +12,9 @@ var $ = {
 // Define task.
 var task = function() {
 	return gulp.src(path.public.main + '/**')
-		.pipe($.plumber(helper.error))
+		.pipe($.plumber(utility.error))
 		.pipe($.zip(config.task.package.name))
-		.pipe(gulp.dest('.'))
-		.pipe(helper.success(task.displayName));
+		.pipe(gulp.dest('.'));
 };
 
 task.description = 'Package public files.';

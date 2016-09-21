@@ -1,16 +1,14 @@
 // bower.js
 
 var bower = require('bower');
-var helper = require('../../helper.js');
+var utility = require('../../utility.js');
 var path = require('../../path.js');
 
 // Define task.
 var task = function(callback) {
-	helper.watch(path.setup.bower, task);
-
 	var options = {
-		production: !!helper.cli.production,
-		force: !!helper.cli.force
+		production: !!utility.cli.production,
+		force: !!utility.cli.force
 	};
 
 	bower.commands.prune().on('end', function() {
@@ -23,6 +21,7 @@ var task = function(callback) {
 };
 
 task.description = 'Install Bower dependencies.';
+task.watch = path.setup.bower;
 
 // Export task.
 module.exports = task;

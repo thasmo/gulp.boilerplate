@@ -26,11 +26,6 @@
 - Resource Minification
 - Notification Support
 
-## Requirements
-- node
-- npm
-- Python 2.7
-
 ## Browser Compatibility
 - Evergreen Browsers
 - IE 10+
@@ -57,19 +52,19 @@ Run the `default` task by executing `gulp`. Run specific tasks by executing `gul
 - **common**  
   Copies general files from the source directory root to the public directory.
 
-- **templates**  
-  Compiles `jade` templates and writes them to the public directory.
+- **template**  
+  Compiles `pug` templates and writes them to the public directory.
 
-- **styles**  
+- **style**  
   Compiles `scss` files and writes them to the public directory.
 
-- **scripts**  
+- **script**  
   Processes `javascript` files and writes them to the public directory.
 
-- **images**  
+- **image**  
   Reads images from the images directory and copies them to the public directory.
 
-- **icons**  
+- **icon**  
   Reads SVG files from the icons directory and generates a sprite including a `scss` file.
 
 - **package**  
@@ -87,7 +82,7 @@ Run the `default` task by executing `gulp`. Run specific tasks by executing `gul
   Use the `-f` or `--force` flag on any task to force it running without using caches.
 
 - **production**  
-  Use the `-f` or `--force` flag on any task to skip tasks which are irrelevant on production environments.
+  Use the `-p` or `--production` flag on any task to skip tasks which are irrelevant on production environments.
 
 ---
 

@@ -1,7 +1,7 @@
 // common.js
 
 var gulp = require('gulp');
-var helper = require('../../helper.js');
+var utility = require('../../utility.js');
 var path = require('../../path.js');
 var $ = {
 	plumber: require('gulp-plumber')
@@ -9,15 +9,13 @@ var $ = {
 
 // Define task.
 var task = function() {
-	helper.watch(path.source.main + '*.*', task);
-
 	return gulp.src(path.source.main + '*.*')
-		.pipe($.plumber(helper.error))
-		.pipe(gulp.dest(path.public.main))
-		.pipe(helper.success(task.displayName));
+		.pipe($.plumber(utility.error))
+		.pipe(gulp.dest(path.public.main));
 };
 
 task.description = 'Process common files.';
+task.watch = path.source.main + '*.*';
 
 // Export task.
 module.exports = task;

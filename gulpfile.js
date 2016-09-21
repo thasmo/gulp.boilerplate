@@ -1,3 +1,3 @@
 // gulpfile.js
 
-require('./task/helper.js').register();
+require('./task/utility.js').register();

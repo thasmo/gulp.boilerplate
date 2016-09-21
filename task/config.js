@@ -26,7 +26,6 @@ module.exports = {
 		},
 
 		pngquant: {
-			quality: '50-80',
 			speed: 1
 		},
 
